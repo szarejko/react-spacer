@@ -1,29 +1,24 @@
 import { API_URL } from 'api'
-import { SearchResults } from 'components/index'
+import { SearchResults, HeroClaim, SearchInput } from 'components/index'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import debounce from 'lodash.debounce'
+import bg_img from 'assets/bg/bg-rocket.jpg'
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 0;
   padding: 30px;
+  height: 100vh;
   width: 100%;
-`
-
-const SearchWrapper = styled.label`
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-
-  input {
-    height: 30px;
-    border: 0;
-    border-bottom: 1px solid black;
-  }
+  background-image: url('${bg_img}');
+  background-size: cover;
+  background-position: 50% 00%;
+  background-repeat: no-repeat;
 `
 
 const Search = () => {
@@ -31,8 +26,6 @@ const Search = () => {
   const [fetchData, setFetchData] = useState([])
 
   const handleSearchInput = (e) => {
-    setInputValue(e.target.value)
-
     const getDataFromAPI = debounce(
       () =>
         fetch(`${API_URL}?q=${inputValue}&media_type=image`)
@@ -45,16 +38,15 @@ const Search = () => {
           }),
       500,
     )
+    setInputValue(e.target.value)
     getDataFromAPI()
   }
 
   return (
     <Wrapper>
-      <SearchWrapper>
-        <label htmlFor='search'>Search</label>
-        <input id='search' type='text' value={inputValue} onChange={handleSearchInput} />
-        <SearchResults data={fetchData} />
-      </SearchWrapper>
+      <HeroClaim/>
+      <SearchInput change={handleSearchInput} value={inputValue}/>
+      <SearchResults data={fetchData} />
     </Wrapper>
   )
 }
