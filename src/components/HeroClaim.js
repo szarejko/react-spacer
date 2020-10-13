@@ -1,3 +1,4 @@
+import { primaryColor } from 'variables'
 import React from 'react'
 import styled from 'styled-components';
 
@@ -12,11 +13,13 @@ const Wrapper = styled.div`
 const Claim = styled.h1`
   font-size: 5rem;
   font-weight: 700;
+  color: ${primaryColor};
 `;
 
 const SubClaim = styled.p`
   margin-top: 20px;
   font-size: 1.5rem;
+  color: ${primaryColor};
 `;
 
 const HeroClaim = () => {
