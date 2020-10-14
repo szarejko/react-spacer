@@ -3,8 +3,8 @@ import { SearchResults, HeroClaim, SearchInput } from 'components/index'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import bg_img from 'assets/bg/bg-rocket.jpg'
 import debounce from 'lodash.debounce'
+import HeroImage from 'components/HeroImage'
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,13 +12,9 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 30px;
-  height: 100vh;
+  padding: 3rem;
+  min-height: 100vh;
   width: 100%;
-  background-image: url('${bg_img}');
-  background-size: cover;
-  background-position: 50% 00%;
-  background-repeat: no-repeat;
 `
 
 const Search = () => {
@@ -44,6 +40,7 @@ const Search = () => {
 
   return (
     <Wrapper>
+      <HeroImage/>
       <HeroClaim/>
       <SearchInput change={handleSearchInput} value={inputValue}/>
       <SearchResults data={fetchData} />

@@ -13,7 +13,7 @@ const Nav = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 5px 20px;
+  padding: .5rem 2rem;
 `;
 
 const NavList = styled.ul`
@@ -27,7 +27,7 @@ const Link = styled(NavLink)`
   color: ${color.secondaryColor};
 
   &:first-child {
-    margin-right: 20px;
+    margin-right: 2rem;
   }
 
   &:hover {

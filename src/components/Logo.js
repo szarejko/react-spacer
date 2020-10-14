@@ -7,7 +7,7 @@ import iconLogo from 'assets/icon/icon-logo.svg'
 const ImageWrapper = styled.figure`
   img {
     display: block;
-    max-width: 80px;
+    max-width: 6rem;
     height: auto;
   }
 `;

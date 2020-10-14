@@ -11,14 +11,14 @@ const Wrapper = styled.div`
 `;
 
 const Claim = styled.h1`
-  font-size: 5rem;
-  font-weight: 700;
+  font-size: 50px;
+  font-weight: bold;
   color: ${primaryColor};
 `;
 
 const SubClaim = styled.p`
-  margin-top: 20px;
-  font-size: 1.5rem;
+  margin-top: 2rem;
+  font-size: 15px;
   color: ${primaryColor};
 `;
 
