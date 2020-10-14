@@ -3,8 +3,8 @@ import { SearchResults, HeroClaim, SearchInput } from 'components/index'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import debounce from 'lodash.debounce'
 import bg_img from 'assets/bg/bg-rocket.jpg'
+import debounce from 'lodash.debounce'
 
 const Wrapper = styled.div`
   display: flex;
