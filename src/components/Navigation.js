@@ -14,6 +14,10 @@ const Nav = styled.nav`
   left: 0;
   width: 100%;
   padding: .5rem 2rem;
+
+  @media (min-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 const NavList = styled.ul`

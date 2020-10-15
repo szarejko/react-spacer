@@ -14,12 +14,26 @@ const Claim = styled.h1`
   font-size: 50px;
   font-weight: bold;
   color: ${primaryColor};
+
+  @media (min-width: 768px) {
+    font-size: 80px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 100px;
+  }
 `;
 
 const SubClaim = styled.p`
   margin-top: 2rem;
   font-size: 15px;
   color: ${primaryColor};
+
+  @media (min-width: 768px) {
+    width: 50rem;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
 `;
 
 const HeroClaim = () => {

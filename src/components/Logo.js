@@ -9,6 +9,10 @@ const ImageWrapper = styled.figure`
     display: block;
     max-width: 6rem;
     height: auto;
+
+    @media (min-width: 768px) {
+      max-width: 10rem;
+    }
   }
 `;
 
