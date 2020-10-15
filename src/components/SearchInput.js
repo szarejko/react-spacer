@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from 'react'
 import styled from 'styled-components'
 import * as color from 'variables'
@@ -28,3 +29,8 @@ const SearchInput = ({ change, value }) => {
 }
 
 export default SearchInput
+
+SearchInput.propTypes = {
+  change: PropTypes.func,
+  value: PropTypes.string.isRequired
+}

@@ -32,7 +32,7 @@ const Search = () => {
           .catch((err) => {
             console.log('Data download error', err)
           }),
-      500,
+      800,
     )
     setInputValue(e.target.value)
     getDataFromAPI()
