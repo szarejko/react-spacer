@@ -52,7 +52,7 @@ const Search = () => {
   return (
     <Wrapper>
       {Hero}
-      <SearchInput change={handleSearchInput} value={inputValue} />
+      <SearchInput change={handleSearchInput} value={inputValue} theme={isLoading}  />
       <SearchResults data={fetchData} />
     </Wrapper>
   )
