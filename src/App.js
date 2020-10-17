@@ -1,7 +1,7 @@
-import * as views from 'views/index';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import { Navigation } from 'components/index';
+import * as view from 'views/index';
 import React from 'react';
 
 const GlobalStyles = createGlobalStyle`
@@ -36,9 +36,9 @@ const App = () => {
       <Navigation />
       <section>
         <Switch>
-          <Route path='/' exact component={views.Search} />
-          <Route path='/about' component={views.About} />
-          <Route component={views.ErrorPage} />
+          <Route path='/' exact component={view.SearchView} />
+          <Route path='/about' component={view.AboutView} />
+          <Route component={view.ErrorView} />
         </Switch>
       </section>
     </Router>

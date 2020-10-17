@@ -1,6 +1,7 @@
-export const primaryColor = 'rgb(255, 255, 255)';
-export const secondaryColor = 'rgb(104,104,104)';
+export const primaryColor = 'rgb(255, 255, 255)'
+export const secondaryColor = 'rgb(104,104,104)'
+export const linkColor = 'rgb(237,235,200)'
 
-export const black = 'rgb(0, 0, 0)';
+export const black = 'rgb(0, 0, 0)'
 
-export const whiteTransparent = 'rgba(255, 255, 255, .8)';
+export const whiteTransparent = 'rgba(255, 255, 255, .8)'

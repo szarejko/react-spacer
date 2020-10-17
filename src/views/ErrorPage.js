@@ -1,5 +1,0 @@
-import React from 'react'
-
-const ErrorPage = () => <h1>Page Not Found.<br/> Error 404</h1>
-
-export default ErrorPage

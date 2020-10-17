@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
+
 import bg_img from 'assets/bg/bg-rocket.jpg'
+
 import * as color from '../variables'
 
-const HeroImg = styled.div`
+const HeroBg = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -27,10 +29,6 @@ const HeroImg = styled.div`
   }
 `;
 
-const HeroImage = () => {
-  return (
-    <HeroImg/>
-  )
-}
+const HeroImage = () => <HeroBg/>
 
 export default HeroImage

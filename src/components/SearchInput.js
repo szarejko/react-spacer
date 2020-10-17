@@ -1,7 +1,7 @@
+import * as color from 'variables'
 import PropTypes from "prop-types";
 import React from 'react'
 import styled from 'styled-components'
-import * as color from 'variables'
 
 const Input = styled.input`
   display: flex;

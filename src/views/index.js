@@ -1,5 +1,5 @@
-import Search from './Search'
-import About from './About'
-import ErrorPage from './ErrorPage'
+import SearchView from './SearchView'
+import AboutView from './AboutView'
+import ErrorView from './ErrorView'
 
-export { Search, About, ErrorPage }
+export { SearchView, AboutView, ErrorView }

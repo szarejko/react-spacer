@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 import iconLogo from 'assets/icon/icon-logo.svg'
 
-const ImageWrapper = styled.figure`
+const LogoWrapper = styled.figure`
   img {
     display: block;
     max-width: 6rem;
     height: auto;
 
     @media (min-width: 768px) {
-      max-width: 10rem;
+      max-width: 8rem;
     }
   }
 `;
@@ -19,9 +19,9 @@ const ImageWrapper = styled.figure`
 const Logo = () => {
   return (
     <Link to="/">
-      <ImageWrapper>
+      <LogoWrapper>
         <img src={`${iconLogo}`} alt="Logo"/>
-      </ImageWrapper>
+      </LogoWrapper>
     </Link>
   )
 }

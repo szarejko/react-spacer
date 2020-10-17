@@ -1,10 +1,10 @@
 import { API_URL } from 'api'
 import { SearchResults, HeroClaim, SearchInput } from 'components/index'
+import HeroBg from 'components/HeroImage'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import debounce from 'lodash.debounce'
-import HeroImage from 'components/HeroImage'
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,14 +20,18 @@ const Wrapper = styled.div`
 const Search = () => {
   const [inputValue, setInputValue] = useState('')
   const [fetchData, setFetchData] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const handleSearchInput = (e) => {
+    setIsLoading(true)
+
     const getDataFromAPI = debounce(
       () =>
         fetch(`${API_URL}?q=${inputValue}&media_type=image`)
           .then((response) => response.json())
           .then((response) => {
             setFetchData(response.collection.items)
+            setIsLoading(false)
           })
           .catch((err) => {
             console.log('Data download error', err)
@@ -38,11 +42,17 @@ const Search = () => {
     getDataFromAPI()
   }
 
+  const Hero = isLoading ? (
+    <>
+      <HeroBg />
+      <HeroClaim />
+    </>
+  ) : null
+
   return (
     <Wrapper>
-      <HeroImage/>
-      <HeroClaim/>
-      <SearchInput change={handleSearchInput} value={inputValue}/>
+      {Hero}
+      <SearchInput change={handleSearchInput} value={inputValue} />
       <SearchResults data={fetchData} />
     </Wrapper>
   )
