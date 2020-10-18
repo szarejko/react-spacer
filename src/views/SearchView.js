@@ -1,4 +1,4 @@
-import { HeroClaim, SearchInput, SearchResults } from 'components/index'
+import { HeroClaim, Results, SearchInput } from 'components/index'
 import React, { useState } from 'react'
 
 import { API_URL } from 'api'
@@ -56,7 +56,7 @@ const Search = () => {
     <Wrapper flexStart={step === 1}>
       {Hero}
       <SearchInput change={handleSearchInput} value={inputValue} theme={step === 1} />
-      <SearchResults data={fetchData} />
+      <Results data={fetchData} />
     </Wrapper>
   )
 }

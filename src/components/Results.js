@@ -1,13 +1,13 @@
 import React from 'react'
 
-const SearchResults = ({ data }) => {
+const Results = ({ data }) => {
   const resultsList = data.map((item) => (
     <li key={item.data[0].nasa_id}>
-      <p>{item.data[0].description}</p>
+      <img src={item.links[0].href} alt={item.data[0].title} />
     </li>
   ))
 
   return <ul>{resultsList}</ul>
 }
 
-export default SearchResults
+export default Results
