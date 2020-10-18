@@ -1,10 +1,10 @@
-import { API_URL } from 'api'
-import { SearchResults, HeroClaim, SearchInput } from 'components/index'
-import HeroBg from 'components/HeroImage'
+import { HeroClaim, SearchInput, SearchResults } from 'components/index'
 import React, { useState } from 'react'
-import styled from 'styled-components'
 
+import { API_URL } from 'api'
+import HeroBg from 'components/HeroImage'
 import debounce from 'lodash.debounce'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
   display: flex;

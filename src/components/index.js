@@ -1,7 +1,7 @@
-import Navigation from './Navigation';
-import SearchResults from './SearchResults';
 import HeroClaim from './HeroClaim'
-import SearchInput from './SearchInput'
 import Logo from './Logo'
+import Navigation from './Navigation';
+import SearchInput from './SearchInput'
+import SearchResults from './SearchResults';
 
 export { Logo, SearchInput, HeroClaim, Navigation, SearchResults };

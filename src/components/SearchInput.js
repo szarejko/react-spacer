@@ -1,8 +1,10 @@
-import { lightTheme, darkTheme } from 'themes'
 import * as color from 'variables'
+
+import { darkTheme, lightTheme } from 'themes'
+import styled, { ThemeProvider } from 'styled-components'
+
 import PropTypes from "prop-types";
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
 
 const Input = styled.input`
   display: flex;

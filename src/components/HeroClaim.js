@@ -1,5 +1,5 @@
-import { primaryColor } from 'variables'
 import React from 'react'
+import { primaryColor } from 'variables'
 import styled from 'styled-components'
 
 const HeroWrapper = styled.div`

@@ -1,9 +1,8 @@
-import React from 'react'
-import styled from 'styled-components';
-
-import bg_img from 'assets/bg/bg-rocket.jpg'
-
 import * as color from '../variables'
+
+import React from 'react'
+import bg_img from 'assets/bg/bg-rocket.jpg'
+import styled from 'styled-components';
 
 const HeroBg = styled.div`
   position: fixed;

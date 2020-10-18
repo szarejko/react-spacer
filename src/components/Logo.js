@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react'
-import styled from 'styled-components';
-
 import iconLogo from 'assets/icon/icon-logo.svg'
+import styled from 'styled-components';
 
 const LogoWrapper = styled.figure`
   img {

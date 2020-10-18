@@ -1,9 +1,9 @@
-import { NavLink } from 'react-router-dom'
 import * as color from 'variables'
-import React from 'react'
-import styled from 'styled-components'
 
 import Logo from './Logo'
+import { NavLink } from 'react-router-dom'
+import React from 'react'
+import styled from 'styled-components'
 
 const Nav = styled.nav`
   position: fixed;

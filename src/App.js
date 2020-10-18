@@ -1,8 +1,10 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
-import { Navigation } from 'components/index';
 import * as view from 'views/index';
+
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+
+import { Navigation } from 'components/index';
 import React from 'react';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 * {
