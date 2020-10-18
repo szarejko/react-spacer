@@ -1,3 +1,4 @@
+import { lightTheme, darkTheme } from 'themes'
 import * as color from 'variables'
 import PropTypes from "prop-types";
 import React from 'react'
@@ -16,8 +17,8 @@ const Input = styled.input`
   background: none;
   border-bottom: 1px solid;
 
-  border-color: ${(props) => props.theme.borderColor};
-  color: ${(props) => props.theme.textColor};
+  border-color: ${({theme}) => theme.borderColor};
+  color: ${({theme}) => theme.textColor};
 
   &:focus {
     caret-color: ${color.primaryColor};
@@ -25,15 +26,6 @@ const Input = styled.input`
     box-shadow: 0 15px 12px -12px ${color.whiteTransparent};
   }
 `
-export const darkTheme = {
-  borderColor: `${color.black}`,
-  textColor: `${color.black}`,
-}
-
-export const lightTheme = {
-  borderColor: `${color.primaryColor}`,
-  textColor: `${color.primaryColor}`,
-}
 
 const SearchInput = ({ change, value, theme }) => {
   return (
