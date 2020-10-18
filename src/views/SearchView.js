@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: ${(props) => (props.flexStart ? 'flex-start' : 'center')};
   margin: 0;
   padding: 3rem;
   min-height: 100vh;
@@ -20,7 +20,8 @@ const Wrapper = styled.div`
 const Search = () => {
   const [inputValue, setInputValue] = useState('')
   const [fetchData, setFetchData] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
+  const [step, setStep] = useState(0)
 
   const handleSearchInput = (e) => {
     setIsLoading(true)
@@ -32,6 +33,7 @@ const Search = () => {
           .then((response) => {
             setFetchData(response.collection.items)
             setIsLoading(false)
+            setStep(1)
           })
           .catch((err) => {
             console.log('Data download error', err)
@@ -42,17 +44,18 @@ const Search = () => {
     getDataFromAPI()
   }
 
-  const Hero = isLoading ? (
-    <>
-      <HeroBg />
-      <HeroClaim />
-    </>
-  ) : null
+  const Hero =
+    step === 0 ? (
+      <>
+        <HeroBg />
+        <HeroClaim />
+      </>
+    ) : null
 
   return (
-    <Wrapper>
+    <Wrapper flexStart={step === 1}>
       {Hero}
-      <SearchInput change={handleSearchInput} value={inputValue} theme={isLoading}  />
+      <SearchInput change={handleSearchInput} value={inputValue} theme={step === 1} />
       <SearchResults data={fetchData} />
     </Wrapper>
   )
