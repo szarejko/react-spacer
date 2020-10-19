@@ -1,22 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const AboutWrapper = styled.div`
+export const AboutWrapper = styled.div`
   height: 100vh;
   width: 100%;
   display: grid;
   justify-content: center;
   align-items: center;
+  background-image: linear-gradient(
+    to bottom,
+    #3f51b1 0%,
+    #5a55ae 13%,
+    #7b5fac 25%,
+    #8f6aae 38%,
+    #a86aa4 50%,
+    #cc6b8e 62%,
+    #f18271 75%,
+    #f3a469 87%,
+    #f7c978 100%
+  );
 `
 
-const AboutInnerWrapper = styled.div`
+export const AboutInnerWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   text-align: center;
   padding: 1rem;
 `
 
-const Title = styled.h1`
+export const Title = styled.h1`
   margin-bottom: 3rem;
   font-size: 25px;
 
@@ -25,7 +37,7 @@ const Title = styled.h1`
   }
 `
 
-const Text = styled.p`
+const PlainText = styled.p`
   font-size: 15px;
   line-height: 1.4;
 
@@ -50,11 +62,11 @@ const About = () => (
         Spacer App made in React
         <br /> by Sebastian Szarejko
       </Title>
-      <Text>
+      <PlainText>
         Based on the idea from the mini-course
         <br />
         <a href='https://www.youtube.com/watch?v=PmlipEkFSOk'>Vue "hello roman"</a>
-      </Text>
+      </PlainText>
     </AboutInnerWrapper>
   </AboutWrapper>
 )

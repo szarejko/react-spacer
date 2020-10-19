@@ -1,5 +1,16 @@
+import { AboutInnerWrapper, AboutWrapper, Title } from 'views/AboutView'
+
 import React from 'react'
 
-const ErrorView = () => <h1>Page Not Found.<br/> Error 404</h1>
+const ErrorView = () => (
+  <AboutWrapper>
+    <AboutInnerWrapper>
+      <Title>
+        Page Not Found.
+        <br /> Error 404
+      </Title>
+    </AboutInnerWrapper>
+  </AboutWrapper>
+)
 
 export default ErrorView

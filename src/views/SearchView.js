@@ -1,8 +1,6 @@
-import { HeroClaim, Results, SearchInput } from 'components/index'
+import { HeroClaim, HeroImg, Item, SearchInput } from 'components/index'
 import React, { useState } from 'react'
 
-import { API_URL } from 'api'
-import HeroBg from 'components/HeroImage'
 import debounce from 'lodash.debounce'
 import styled from 'styled-components'
 
@@ -17,37 +15,46 @@ const Wrapper = styled.div`
   width: 100%;
 `
 
+const API_URL = 'https://images-api.nasa.gov/search'
+
 const Search = () => {
   const [inputValue, setInputValue] = useState('')
   const [fetchData, setFetchData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [step, setStep] = useState(0)
 
-  const handleSearchInput = (e) => {
+  const handleInputValue = (e) => {
+    setInputValue(e.target.value)
+  }
+
+  const handleSearchInput = () => {
     setIsLoading(true)
 
-    const getDataFromAPI = debounce(
-      () =>
-        fetch(`${API_URL}?q=${inputValue}&media_type=image`)
-          .then((response) => response.json())
-          .then((response) => {
-            setFetchData(response.collection.items)
-            setIsLoading(false)
-            setStep(1)
-          })
-          .catch((err) => {
-            console.log('Data download error', err)
-          }),
-      800,
-    )
-    setInputValue(e.target.value)
-    getDataFromAPI()
+    if (!isLoading) {
+      const getDataFromAPI = debounce(
+        async () =>
+          fetch(`${API_URL}?q=${inputValue}&media_type=image`)
+            .then((response) => response.json())
+            .then((response) => {
+              setFetchData(response.collection.items)
+              setIsLoading(false)
+              setStep(1)
+            })
+            .catch((err) => {
+              console.log('Data download error', err)
+            }),
+        800,
+      )
+      getDataFromAPI()
+    }
   }
+
+  const Result = fetchData && !isLoading && step === 1 ? <Item data={fetchData} /> : null
 
   const Hero =
     step === 0 ? (
       <>
-        <HeroBg />
+        <HeroImg />
         <HeroClaim />
       </>
     ) : null
@@ -55,8 +62,13 @@ const Search = () => {
   return (
     <Wrapper flexStart={step === 1}>
       {Hero}
-      <SearchInput change={handleSearchInput} value={inputValue} theme={step === 1} />
-      <Results data={fetchData} />
+      <SearchInput
+        keyPress={handleSearchInput}
+        change={handleInputValue}
+        value={inputValue}
+        theme={step === 1}
+      />
+      {Result}
     </Wrapper>
   )
 }

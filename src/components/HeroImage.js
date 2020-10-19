@@ -4,7 +4,7 @@ import React from 'react'
 import bg_img from 'assets/bg/bg-rocket.jpg'
 import styled from 'styled-components';
 
-const HeroBg = styled.div`
+const HeroImg = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -28,6 +28,6 @@ const HeroBg = styled.div`
   }
 `;
 
-const HeroImage = () => <HeroBg/>
+const HeroImage = () => <HeroImg/>
 
 export default HeroImage

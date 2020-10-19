@@ -11,7 +11,7 @@ const Input = styled.input`
   flex-direction: column;
   width: 30rem;
   height: 3rem;
-  margin-top: 5rem;
+  margin: 10rem 0 5rem;
   border: 0;
   font-size: 18px;
   text-align: center;
@@ -26,13 +26,22 @@ const Input = styled.input`
     caret-color: ${({ theme }) => theme.textColor};
     outline: none;
     box-shadow: 0 15px 12px -12px ${color.whiteTransparent};
+    background: ${({ theme }) => theme.background};
+    border-radius: 5px;
   }
 `
 
-const SearchInput = ({ change, value, theme }) => {
+const SearchInput = ({ change, keyPress, value, theme }) => {
   return (
     <ThemeProvider theme={lightTheme}>
-      <Input type='text' value={value} onChange={change} theme={theme ? darkTheme : null} />
+      <Input
+        type='text'
+        value={value}
+        onChange={change}
+        onKeyPress={keyPress}
+        theme={theme ? darkTheme : null}
+        placeholder= {'e.g. jupiter'}
+      />
     </ThemeProvider>
   )
 }
