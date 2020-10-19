@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const Input = styled.input`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 30rem;
@@ -40,7 +41,6 @@ const SearchInput = ({ change, keyPress, value, theme }) => {
         onChange={change}
         onKeyPress={keyPress}
         theme={theme ? darkTheme : null}
-        placeholder= {'e.g. jupiter'}
       />
     </ThemeProvider>
   )

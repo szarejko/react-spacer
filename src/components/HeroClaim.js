@@ -43,7 +43,7 @@ const HeroClaim = () => {
       <SubClaim>
         Begin your journey through our amazing galaxy, and discover places you never heard of.
       </SubClaim>
-      <SubClaim>Type anything space-related to start.</SubClaim>
+      <SubClaim>Type anything space-related and hit "ENTER" to start.</SubClaim>
     </HeroWrapper>
   )
 }

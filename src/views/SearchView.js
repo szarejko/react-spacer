@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 const API_URL = 'https://images-api.nasa.gov/search'
 
 const Search = () => {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('moon')
   const [fetchData, setFetchData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [step, setStep] = useState(0)
@@ -27,25 +27,21 @@ const Search = () => {
     setInputValue(e.target.value)
   }
 
-  const handleSearchInput = () => {
+  const handleSearchInput = (e) => {
     setIsLoading(true)
 
-    if (!isLoading) {
-      const getDataFromAPI = debounce(
-        async () =>
-          fetch(`${API_URL}?q=${inputValue}&media_type=image`)
-            .then((response) => response.json())
-            .then((response) => {
-              setFetchData(response.collection.items)
-              setIsLoading(false)
-              setStep(1)
-            })
-            .catch((err) => {
-              console.log('Data download error', err)
-            }),
-        800,
-      )
-      getDataFromAPI()
+    if (e.key === 'Enter') {
+    fetch(`${API_URL}?q=${inputValue}&media_type=image`)
+      .then((response) => response.json())
+      .then((response) => {
+        setFetchData(response.collection.items)
+        setIsLoading(false)
+        setStep(1)
+      })
+      .catch((err) => {
+        setIsLoading(false)
+        console.log('Data download error', err)
+      })
     }
   }
 
