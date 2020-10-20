@@ -1,23 +1,8 @@
-import { setBreakpoints, setGradient } from 'styles'
+import { InnerWrapper, Wrapper } from 'components/global/Wrapper'
 
 import React from 'react'
+import { setBreakpoints } from 'styles'
 import styled from 'styled-components'
-
-export const AboutWrapper = styled.div`
-  height: 100vh;
-  width: 100%;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  background-image: ${setGradient.main}
-`
-
-export const AboutInnerWrapper = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 1rem;
-`
 
 export const Title = styled.h1`
   margin-bottom: 3rem;
@@ -47,8 +32,8 @@ const PlainText = styled.p`
 `
 
 const About = () => (
-  <AboutWrapper>
-    <AboutInnerWrapper>
+  <Wrapper>
+    <InnerWrapper>
       <Title>
         Spacer App made in React
         <br /> by Sebastian Szarejko
@@ -58,8 +43,8 @@ const About = () => (
         <br />
         <a href='https://www.youtube.com/watch?v=PmlipEkFSOk'>Vue "hello roman"</a>
       </PlainText>
-    </AboutInnerWrapper>
-  </AboutWrapper>
+    </InnerWrapper>
+  </Wrapper>
 )
 
 export default About
