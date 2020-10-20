@@ -1,4 +1,5 @@
 import React from 'react'
+import {setBreakpoints} from 'styles'
 import styled from 'styled-components';
 
 const List = styled.ul`
@@ -6,7 +7,7 @@ const List = styled.ul`
   grid-gap: 20px;
   grid-template-columns: repeat(2, 1fr);
 
-  @media (min-width: 768px) {
+  @media (min-width: ${setBreakpoints.tablet}) {
     grid-template-columns: repeat(3, 1fr);
   }
 `;
@@ -15,12 +16,12 @@ const ListItem = styled.li`
   list-style: none;
 `;
 
-const ImgWrapper = styled.figure`
+const ListImgWrapper = styled.figure`
   width: 40vw;
   height: 25rem;
   display: inline-block;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${setBreakpoints.tablet}) {
     width: 25vw;
   }
 
@@ -35,9 +36,9 @@ const ImgWrapper = styled.figure`
 const Results = ({ data }) => {
   const resultsList = data.map((item) => (
     <ListItem key={item.data[0].nasa_id}>
-      <ImgWrapper>
+      <ListImgWrapper>
         <img src={item.links[0].href} alt={item.data[0].title} />
-      </ImgWrapper>
+      </ListImgWrapper>
     </ListItem>
   ))
 

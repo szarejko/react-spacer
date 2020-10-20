@@ -1,4 +1,4 @@
-import * as color from 'variables'
+import { setBreakpoints, setColors } from 'styles'
 
 import Logo from './Logo'
 import { NavLink } from 'react-router-dom'
@@ -15,7 +15,7 @@ const Nav = styled.nav`
   width: 100%;
   padding: 0.5rem 2rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${setBreakpoints.tablet}) {
     padding: 2rem;
   }
 `
@@ -28,7 +28,7 @@ const NavList = styled.ul`
 const Link = styled(NavLink)`
   text-decoration: none;
   transition: all 0.5s ease;
-  color: ${color.linkColor};
+  color: ${setColors.linkColor};
 
   &:first-child {
     margin-right: 2rem;

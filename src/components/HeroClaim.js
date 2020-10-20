@@ -1,8 +1,9 @@
+import { setBreakpoints, setColors } from 'styles'
+
 import React from 'react'
-import { primaryColor } from 'variables'
 import styled from 'styled-components'
 
-const HeroWrapper = styled.div`
+const ClaimWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,13 +14,13 @@ const HeroWrapper = styled.div`
 const Claim = styled.h1`
   font-size: 50px;
   font-weight: bold;
-  color: ${primaryColor};
+  color: ${setColors.primaryColor};
 
-  @media (min-width: 768px) {
+  @media (min-width: ${setBreakpoints.tablet}) {
     font-size: 80px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${setBreakpoints.desktop}) {
     font-size: 100px;
   }
 `
@@ -27,9 +28,9 @@ const Claim = styled.h1`
 const SubClaim = styled.p`
   margin-top: 2rem;
   font-size: 15px;
-  color: ${primaryColor};
+  color: ${setColors.primaryColor};
 
-  @media (min-width: 768px) {
+  @media (min-width: ${setBreakpoints.tablet}) {
     width: 50rem;
     font-size: 18px;
     letter-spacing: 1px;
@@ -38,13 +39,13 @@ const SubClaim = styled.p`
 
 const HeroClaim = () => {
   return (
-    <HeroWrapper>
+    <ClaimWrapper>
       <Claim>SPACER</Claim>
       <SubClaim>
         Begin your journey through our amazing galaxy, and discover places you never heard of.
       </SubClaim>
       <SubClaim>Type anything space-related and hit "ENTER" to start.</SubClaim>
-    </HeroWrapper>
+    </ClaimWrapper>
   )
 }
 

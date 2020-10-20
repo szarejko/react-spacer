@@ -1,8 +1,7 @@
-import * as color from '../variables'
-
 import React from 'react'
 import bg_img from 'assets/bg/bg-rocket.jpg'
-import styled from 'styled-components';
+import { setColors } from 'styles'
+import styled from 'styled-components'
 
 const HeroImg = styled.div`
   position: fixed;
@@ -24,10 +23,10 @@ const HeroImg = styled.div`
     right: 0;
     bottom: 0;
     z-index: 1;
-    background-color: rgba(${color.black}, .2);
+    background-color: rgba(${setColors.black}, 0.2);
   }
-`;
+`
 
-const HeroImage = () => <HeroImg/>
+const HeroImage = () => <HeroImg />
 
 export default HeroImage

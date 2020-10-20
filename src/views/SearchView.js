@@ -1,7 +1,6 @@
 import { HeroClaim, HeroImg, Item, SearchInput } from 'components/index'
 import React, { useState } from 'react'
 
-import debounce from 'lodash.debounce'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -31,21 +30,19 @@ const Search = () => {
     setIsLoading(true)
 
     if (e.key === 'Enter') {
-    fetch(`${API_URL}?q=${inputValue}&media_type=image`)
-      .then((response) => response.json())
-      .then((response) => {
-        setFetchData(response.collection.items)
-        setIsLoading(false)
-        setStep(1)
-      })
-      .catch((err) => {
-        setIsLoading(false)
-        console.log('Data download error', err)
-      })
+      fetch(`${API_URL}?q=${inputValue}&media_type=image`)
+        .then((response) => response.json())
+        .then((response) => {
+          setFetchData(response.collection.items)
+          setIsLoading(false)
+          setStep(1)
+        })
+        .catch((err) => {
+          setIsLoading(false)
+          console.log('Data download error', err)
+        })
     }
   }
-
-  const Result = fetchData && !isLoading && step === 1 ? <Item data={fetchData} /> : null
 
   const Hero =
     step === 0 ? (
@@ -54,6 +51,8 @@ const Search = () => {
         <HeroClaim />
       </>
     ) : null
+
+  const Result = fetchData && !isLoading && step === 1 ? <Item data={fetchData} /> : null
 
   return (
     <Wrapper flexStart={step === 1}>

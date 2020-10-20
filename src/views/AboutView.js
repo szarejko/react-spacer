@@ -1,3 +1,5 @@
+import { setBreakpoints, setGradient } from 'styles'
+
 import React from 'react'
 import styled from 'styled-components'
 
@@ -7,18 +9,7 @@ export const AboutWrapper = styled.div`
   display: grid;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(
-    to bottom,
-    #3f51b1 0%,
-    #5a55ae 13%,
-    #7b5fac 25%,
-    #8f6aae 38%,
-    #a86aa4 50%,
-    #cc6b8e 62%,
-    #f18271 75%,
-    #f3a469 87%,
-    #f7c978 100%
-  );
+  background-image: ${setGradient.main}
 `
 
 export const AboutInnerWrapper = styled.div`
@@ -32,7 +23,7 @@ export const Title = styled.h1`
   margin-bottom: 3rem;
   font-size: 25px;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${setBreakpoints.tablet}) {
     font-size: 30px;
   }
 `
@@ -41,7 +32,7 @@ const PlainText = styled.p`
   font-size: 15px;
   line-height: 1.4;
 
-  @media (min-width: 768px) {
+  @media (min-width: ${setBreakpoints.tablet}) {
     font-size: 18px;
   }
 

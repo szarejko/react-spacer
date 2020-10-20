@@ -1,10 +1,9 @@
-import * as color from 'variables'
-
 import { darkTheme, lightTheme } from 'themes'
 import styled, { ThemeProvider } from 'styled-components'
 
 import PropTypes from 'prop-types'
 import React from 'react'
+import { setColors } from 'styles'
 
 const Input = styled.input`
   position: relative;
@@ -26,7 +25,7 @@ const Input = styled.input`
   &:focus {
     caret-color: ${({ theme }) => theme.textColor};
     outline: none;
-    box-shadow: 0 15px 12px -12px ${color.whiteTransparent};
+    box-shadow: 0 15px 12px -12px ${setColors.whiteTransparent};
     background: ${({ theme }) => theme.background};
     border-radius: 5px;
   }

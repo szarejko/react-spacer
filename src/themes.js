@@ -1,13 +1,13 @@
-import * as color from 'variables'
+import {setColors} from 'styles'
 
 export const darkTheme = {
-  borderColor: `${color.black}`,
-  textColor: `${color.black}`,
-  background: `${color.blackLightTransparent}`
+  borderColor: `${setColors.black}`,
+  textColor: `${setColors.black}`,
+  background: `${setColors.blackLightTransparent}`
 }
 
 export const lightTheme = {
-  borderColor: `${color.primaryColor}`,
-  textColor: `${color.primaryColor}`,
-  background: `${color.whiteLightTransparent}`
+  borderColor: `${setColors.primaryColor}`,
+  textColor: `${setColors.primaryColor}`,
+  background: `${setColors.whiteLightTransparent}`
 }
