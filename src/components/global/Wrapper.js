@@ -1,5 +1,5 @@
-import {setGradient} from 'styles'
-import styled from 'styled-components';
+import { setGradient } from 'styles'
+import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   height: 100vh;
@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   display: grid;
   justify-content: center;
   align-items: center;
-  background-image: ${setGradient.main}
+  background-image: ${setGradient.main};
 `
 
 export const InnerWrapper = styled.div`

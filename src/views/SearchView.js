@@ -29,7 +29,7 @@ const Search = () => {
   const handleSearchInput = (e) => {
     setIsLoading(true)
 
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' || e.type === 'mousedown') {
       fetch(`${API_URL}?q=${inputValue}&media_type=image`)
         .then((response) => response.json())
         .then((response) => {
@@ -39,7 +39,7 @@ const Search = () => {
         })
         .catch((err) => {
           setIsLoading(false)
-          console.log('Data download error', err)
+          console.warn('Data download error', err)
         })
     }
   }
