@@ -1,6 +1,7 @@
 import { setBreakpoints, setColors } from 'styles'
 
 import React from 'react'
+import { fadeIn } from 'components/global/Animations'
 import styled from 'styled-components'
 
 const ClaimWrapper = styled.div`
@@ -15,6 +16,7 @@ const Claim = styled.h1`
   font-size: 50px;
   font-weight: bold;
   color: ${setColors.primaryColor};
+  ${fadeIn('80%', '-5%', '0')};
 
   @media (min-width: ${setBreakpoints.tablet}) {
     font-size: 80px;
@@ -29,6 +31,7 @@ const SubClaim = styled.p`
   margin-top: 2rem;
   font-size: 15px;
   color: ${setColors.primaryColor};
+  ${fadeIn('-80%', '5%', '0')};
 
   @media (min-width: ${setBreakpoints.tablet}) {
     width: 50rem;
