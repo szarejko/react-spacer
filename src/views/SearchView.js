@@ -58,7 +58,7 @@ const Search = () => {
     <Wrapper flexStart={step === 1}>
       {Hero}
       <SearchInput
-        keyPress={handleSearchInput}
+        handleSearch={handleSearchInput}
         change={handleInputValue}
         value={inputValue}
         theme={step === 1}

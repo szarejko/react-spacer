@@ -1,8 +1,8 @@
+import React, { useEffect, useRef } from 'react'
 import { darkTheme, lightTheme } from 'themes'
 import styled, { ThemeProvider } from 'styled-components'
 
 import PropTypes from 'prop-types'
-import React from 'react'
 import iconSearch from 'assets/icon/icon-search.png'
 
 const InputWrapper = styled.div`
@@ -11,28 +11,6 @@ const InputWrapper = styled.div`
   padding: 2px;
   margin: 10rem 0 5rem;
 `
-
-const InputButton = styled.button`
-  border: none;
-  border-bottom: 1px solid;
-  border-color: ${({ theme }) => theme.borderColor};
-  width: 3.5rem;
-  background: url(${iconSearch}), ${({ theme }) => theme.background};
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 55%;
-  cursor: pointer;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  z-index: 10;
-
-  &:hover,
-  &:active {
-    outline: none;
-    opacity: 0.5;
-  }
-`
-
 const Input = styled.input`
   position: relative;
   display: flex;
@@ -45,9 +23,7 @@ const Input = styled.input`
   text-align: center;
   transition: all 0.5s;
   background: none;
-  border-bottom: 1px solid;
 
-  border-color: ${({ theme }) => theme.borderColor};
   color: ${({ theme }) => theme.textColor};
   background: ${({ theme }) => theme.background};
 
@@ -59,7 +35,29 @@ const Input = styled.input`
   }
 `
 
-const SearchInput = ({ change, keyPress, click, value, theme }) => {
+const InputButton = styled.button`
+  border: none;
+  width: 3.5rem;
+  background: url(${iconSearch}), ${({ theme }) => theme.background};
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 55%;
+  cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  &:hover {
+    opacity: 0.3;
+  }
+`
+
+const SearchInput = ({ change, handleSearch, value, theme }) => {
+  const searchInputRef = useRef(true)
+
+  useEffect(() => {
+    searchInputRef.current.focus()
+  }, [])
+
   return (
     <ThemeProvider theme={lightTheme}>
       <InputWrapper>
@@ -67,10 +65,11 @@ const SearchInput = ({ change, keyPress, click, value, theme }) => {
           type='text'
           value={value}
           onChange={change}
-          onKeyPress={keyPress}
+          onKeyPress={handleSearch}
           theme={theme ? darkTheme : null}
+          ref={searchInputRef}
         />
-        <InputButton theme={theme ? darkTheme : null} onMouseDown={keyPress} />
+        <InputButton theme={theme ? darkTheme : null} onMouseDown={handleSearch} />
       </InputWrapper>
     </ThemeProvider>
   )
