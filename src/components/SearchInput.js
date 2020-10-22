@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { darkTheme, lightTheme } from 'themes'
+import { darkTheme, lightTheme } from 'components/theme/themes'
 import styled, { ThemeProvider } from 'styled-components'
 
 import PropTypes from 'prop-types'
@@ -11,6 +11,7 @@ const InputWrapper = styled.div`
   padding: 2px;
   margin: 10rem 0 5rem;
 `
+
 const Input = styled.input`
   position: relative;
   display: flex;

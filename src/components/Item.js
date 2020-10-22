@@ -1,10 +1,10 @@
 import React from 'react'
-import {setBreakpoints} from 'styles'
+import {setBreakpoints} from 'components/globals/styles'
 import styled from 'styled-components';
 
 const List = styled.ul`
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 2rem;
   grid-template-columns: repeat(2, 1fr);
 
   @media (min-width: ${setBreakpoints.tablet}) {

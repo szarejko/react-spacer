@@ -56,14 +56,18 @@ const Search = () => {
 
   return (
     <Wrapper flexStart={step === 1}>
+
       {Hero}
+
       <SearchInput
         handleSearch={handleSearchInput}
         change={handleInputValue}
         value={inputValue}
         theme={step === 1}
       />
+
       {Result}
+
     </Wrapper>
   )
 }

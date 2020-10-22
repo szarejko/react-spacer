@@ -1,4 +1,4 @@
-import { setBreakpoints, setColors } from 'styles'
+import { setBreakpoints, setColors } from 'components/globals/styles'
 
 import Logo from './Logo'
 import { NavLink } from 'react-router-dom'

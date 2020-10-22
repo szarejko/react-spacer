@@ -1,6 +1,6 @@
 import React from 'react'
 import bg_img from 'assets/bg/bg-rocket.jpg'
-import { setColors } from 'styles'
+import { setColors } from 'components/globals/styles'
 import styled from 'styled-components'
 
 const HeroImg = styled.div`

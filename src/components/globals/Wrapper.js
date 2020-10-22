@@ -1,4 +1,4 @@
-import { setGradient } from 'styles'
+import { setGradient } from 'components/globals/styles'
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`

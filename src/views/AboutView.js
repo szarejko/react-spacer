@@ -1,7 +1,7 @@
-import { InnerWrapper, Wrapper } from 'components/global/Wrapper'
+import { InnerWrapper, Wrapper } from 'components/globals/Wrapper'
 
 import React from 'react'
-import { setBreakpoints } from 'styles'
+import { setBreakpoints } from 'components/globals/styles'
 import styled from 'styled-components'
 
 export const Title = styled.h1`

@@ -1,4 +1,4 @@
-import {css, keyframes} from 'styled-components';
+import { css, keyframes } from 'styled-components'
 
 export const fadeIn = (start, middle, end) => {
   const amination = keyframes`
@@ -15,5 +15,7 @@ export const fadeIn = (start, middle, end) => {
     transform: translateY(${end});
   }
   `
-  return css`animation: ${amination} 2s ease-in-out`
+  return css`
+    animation: ${amination} 2s ease-in-out;
+  `
 }

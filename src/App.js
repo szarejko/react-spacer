@@ -1,12 +1,16 @@
 import * as view from 'views/index'
 
+import { Modal, Navigation } from 'components/index'
+import React, { useState } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
-import { GlobalStyles } from './components/global/GlobalStyles'
-import { Navigation } from 'components/index'
-import React from 'react'
+import { GlobalStyles } from './components/theme/GlobalStyles'
 
 const App = () => {
+  const [showModal, setShowModal] = useState(true)
+
+  const handleToggleModal = () => setShowModal(false)
+
   return (
     <Router>
       <GlobalStyles />
@@ -18,6 +22,9 @@ const App = () => {
           <Route component={view.ErrorView} />
         </Switch>
       </section>
+      <Modal toggleModal={handleToggleModal} show={showModal}>
+        content
+      </Modal>
     </Router>
   )
 }
