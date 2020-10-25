@@ -1,10 +1,11 @@
-import { setColors, setShadow } from 'components/globals/styles'
+import { setBreakpoints, setColors, setShadow } from 'components/globals/styles'
 
+import { CloseBtn } from 'components/globals/Button'
 import React from 'react'
 import { createPortal } from 'react-dom'
 import styled from 'styled-components'
 
-export const ModalOverlay = styled.div`
+const ModalOverlay = styled.div`
   display: block;
   position: fixed;
   top: 0;
@@ -16,47 +17,84 @@ export const ModalOverlay = styled.div`
   background-color: ${setColors.blackTransparent};
 `
 
-export const ModalContent = styled.div`
+const ModalContent = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   background-color: ${setColors.pale};
   padding: 2rem;
   border: 1px solid ${setColors.grey};
   box-shadow: ${setShadow.main};
-  width: 70%;
+  width: 95%;
   translate: all 0.5s;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  border-radius: 5px;
   z-index: 99;
-`
 
-export const CloseBtn = styled.button`
-  font-size: 20px;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  margin-bottom: 3rem;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  border: 1px solid ${setColors.grey};
-  border-radius: 0.6rem;
-
-  &:hover {
-    transition: color 0.3s ease-in-out;
-    border-color: ${setColors.blackTransparent};
-    color: ${setColors.blackTransparent};
+  @media (min-width: ${setBreakpoints.tablet}) {
+    width: 80%;
   }
 `
 
-const Modal = ({ children, toggleModal, show }) => {
+const ModalInnerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: ${setBreakpoints.tablet}) {
+    flex-direction: row;
+  }
+
+  figure {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    @media (min-width: ${setBreakpoints.tablet}) {
+      width: 50%;
+      margin: 0 1.5rem 0 0;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+`
+
+const ModalDescription = styled.div`
+  width: 100%;
+
+  @media (min-width: ${setBreakpoints.tablet}) {
+    width: 50%;
+    padding-left: 1.5rem;
+    border-left: 1px solid ${setColors.grey};
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+`
+
+const Modal = ({ toggleModal, show }) => {
   const content = show && (
     <ModalOverlay>
       <ModalContent>
         <CloseBtn onClick={toggleModal}>&Chi;</CloseBtn>
-        {children}
+        <ModalInnerWrapper>
+          <figure>
+            <img src='https://dummyimage.com/600x400/000/fff' alt='' />
+          </figure>
+          <ModalDescription>
+            <h2>test</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, fugit quasi. Aliquid
+              aperiam fugit sequi!
+            </p>
+          </ModalDescription>
+        </ModalInnerWrapper>
       </ModalContent>
     </ModalOverlay>
   )

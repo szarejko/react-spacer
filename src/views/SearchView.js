@@ -1,4 +1,4 @@
-import { HeroClaim, HeroImg, Input, Item } from 'components/index'
+import { HeroClaim, HeroImg, Input, Results } from 'components/index'
 import React, { useState } from 'react'
 
 import styled from 'styled-components'
@@ -52,7 +52,7 @@ const Search = () => {
       </>
     ) : null
 
-  const Result = fetchData && !isLoading && step === 1 ? <Item data={fetchData} /> : null
+  const Result = fetchData && !isLoading && step === 1 ? <Results data={fetchData} /> : null
 
   return (
     <Wrapper flexStart={step === 1}>

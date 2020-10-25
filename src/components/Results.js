@@ -51,9 +51,9 @@ const ListImgWrapper = styled.figure`
   }
 `
 
-const Results = ({ data }) => {
+const Results = ({ data, handleModal }) => {
   const resultsList = data.map((item) => (
-    <ListItem key={item.data[0].nasa_id}>
+    <ListItem key={item.data[0].nasa_id} onClick={handleModal}>
       <ListImgWrapper>
         <img src={item.links[0].href} alt={item.data[0].title} />
       </ListImgWrapper>
