@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
-import iconLogo from 'assets/icon/icon-logo.svg'
+import iconLogo from 'assets/icons/icon-logo.svg'
 import { setBreakpoints } from 'components/globals/styles'
 import styled from 'styled-components'
 

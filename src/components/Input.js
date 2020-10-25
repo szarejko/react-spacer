@@ -3,7 +3,7 @@ import { darkTheme, lightTheme } from 'components/theme/themes'
 import styled, { ThemeProvider } from 'styled-components'
 
 import PropTypes from 'prop-types'
-import iconSearch from 'assets/icon/icon-search.png'
+import iconSearch from 'assets/icons/icon-search.png'
 
 const MainInputWrapper = styled.div`
   display: flex;
