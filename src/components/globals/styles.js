@@ -23,7 +23,7 @@ export const setColors = {
 }
 
 export const setGradient = {
-  main: `linear-gradient(-26deg, rgb(29, 43, 100) 0%, rgb(248, 205, 218) 100%);`
+  main: `linear-gradient(315deg,  #ff4e00 0%, #ec9f05 75%);`
 }
 
 export const setShadow = {

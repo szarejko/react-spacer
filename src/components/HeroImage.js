@@ -1,5 +1,5 @@
 import React from 'react'
-import bg_img from 'assets/bg/bg-rocket.jpg'
+import bg_img from 'assets/bg/bg-mars.jpg'
 import { setColors } from 'components/globals/styles'
 import styled from 'styled-components'
 
