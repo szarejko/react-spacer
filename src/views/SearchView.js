@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 const API_URL = 'https://images-api.nasa.gov/search'
 
 const Search = () => {
-  const [inputValue, setInputValue] = useState('moon')
+  const [inputValue, setInputValue] = useState('black hole')
   const [fetchData, setFetchData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [step, setStep] = useState(0)

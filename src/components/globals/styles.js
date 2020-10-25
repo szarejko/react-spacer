@@ -1,5 +1,3 @@
-
-
 export const setBreakpoints = {
   tablet: '768px',
   desktop: '1024px'
@@ -27,6 +25,5 @@ export const setGradient = {
 }
 
 export const setShadow = {
-  main: `0 4px 8px 0 rgba(${setColors.black}, 0.2), 0 6px 20px 0 rgba(${setColors.black}, 0.2);
-  `
+  main: `0 4px 8px 0 rgba(${setColors.black}, 0.2), 0 6px 20px 0 rgba(${setColors.black}, 0.2);`
 }

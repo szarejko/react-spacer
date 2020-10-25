@@ -1,6 +1,6 @@
 import { setBreakpoints, setColors, setShadow } from 'components/globals/styles'
 
-import { CloseBtn } from 'components/globals/Button'
+import { CloseBtn } from 'components/globals/CloseBtn'
 import React from 'react'
 import { createPortal } from 'react-dom'
 import styled from 'styled-components'

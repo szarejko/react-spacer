@@ -9,7 +9,7 @@ const HeroImg = styled.div`
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url('${({img}) => img || bg_img}');
+  background-image: url('${({ img }) => img || bg_img}');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 00%;
