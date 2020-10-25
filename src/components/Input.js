@@ -5,19 +5,19 @@ import styled, { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 import iconSearch from 'assets/icon/icon-search.png'
 
-const InputWrapper = styled.div`
+const MainInputWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 2px;
-  margin: 10rem 0 5rem;
+  margin: 5rem 0;
 `
 
-const Input = styled.input`
+const MainInput = styled.input`
   position: relative;
   display: flex;
   flex-direction: column;
   width: 25rem;
-  height: 3rem;
+  height: 3.5rem;
   padding-left: 3.5rem;
   border: 0;
   font-size: 18px;
@@ -30,13 +30,12 @@ const Input = styled.input`
 
   &:focus {
     caret-color: ${({ theme }) => theme.textColor};
-    outline: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
   }
 `
 
-const InputButton = styled.button`
+const MainInputButton = styled.button`
   border: none;
   width: 3.5rem;
   background: url(${iconSearch}), ${({ theme }) => theme.background};
@@ -46,13 +45,14 @@ const InputButton = styled.button`
   cursor: pointer;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  margin-left: .5rem;
 
   &:hover {
     opacity: 0.3;
   }
 `
 
-const SearchInput = ({ change, handleSearch, value, theme }) => {
+const Input = ({ change, handleSearch, value, theme }) => {
   const searchInputRef = useRef(true)
 
   useEffect(() => {
@@ -61,8 +61,8 @@ const SearchInput = ({ change, handleSearch, value, theme }) => {
 
   return (
     <ThemeProvider theme={lightTheme}>
-      <InputWrapper>
-        <Input
+      <MainInputWrapper>
+        <MainInput
           type='text'
           value={value}
           onChange={change}
@@ -70,15 +70,15 @@ const SearchInput = ({ change, handleSearch, value, theme }) => {
           theme={theme ? darkTheme : null}
           ref={searchInputRef}
         />
-        <InputButton theme={theme ? darkTheme : null} onMouseDown={handleSearch} />
-      </InputWrapper>
+        <MainInputButton theme={theme ? darkTheme : null} onMouseDown={handleSearch} />
+      </MainInputWrapper>
     </ThemeProvider>
   )
 }
 
-export default SearchInput
+export default Input
 
-SearchInput.propTypes = {
+Input.propTypes = {
   change: PropTypes.func,
   value: PropTypes.string.isRequired,
 }

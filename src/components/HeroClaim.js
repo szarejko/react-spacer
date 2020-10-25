@@ -16,7 +16,7 @@ const Claim = styled.h1`
   font-size: 50px;
   font-weight: bold;
   color: ${setColors.primaryColor};
-  ${fadeIn('80%', '-5%', '0')};
+  ${fadeIn('80%', '0', '0')};
 
   @media (min-width: ${setBreakpoints.tablet}) {
     font-size: 80px;
@@ -31,7 +31,7 @@ const SubClaim = styled.p`
   margin-top: 2rem;
   font-size: 15px;
   color: ${setColors.primaryColor};
-  ${fadeIn('-80%', '5%', '0')};
+  ${fadeIn('-80%', '0', '0')};
 
   @media (min-width: ${setBreakpoints.tablet}) {
     width: 50rem;

@@ -1,4 +1,4 @@
-import { HeroClaim, HeroImg, Item, SearchInput } from 'components/index'
+import { HeroClaim, HeroImg, Input, Item } from 'components/index'
 import React, { useState } from 'react'
 
 import styled from 'styled-components'
@@ -56,18 +56,14 @@ const Search = () => {
 
   return (
     <Wrapper flexStart={step === 1}>
-
       {Hero}
-
-      <SearchInput
+      <Input
         handleSearch={handleSearchInput}
         change={handleInputValue}
         value={inputValue}
         theme={step === 1}
       />
-
       {Result}
-
     </Wrapper>
   )
 }
