@@ -1,6 +1,7 @@
-import { setBreakpoints, setColors, setShadow } from 'components/globals/styles'
+import { setBreakpoints, setColors, setShadow } from 'components/global/styles'
 
-import { CloseBtn } from 'components/globals/CloseBtn'
+import { CloseBtn } from 'components/global/CloseBtn'
+import { ModalContent } from 'components/index'
 import React from 'react'
 import { createPortal } from 'react-dom'
 import styled from 'styled-components'
@@ -17,7 +18,7 @@ const ModalOverlay = styled.div`
   background-color: ${setColors.blackTransparent};
 `
 
-const ModalContent = styled.div`
+const ModalWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -37,69 +38,25 @@ const ModalContent = styled.div`
   @media (min-width: ${setBreakpoints.tablet}) {
     width: 80%;
   }
-`
 
-const ModalInnerWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: ${setBreakpoints.tablet}) {
-    flex-direction: row;
-  }
-
-  figure {
-    width: 100%;
-    margin-bottom: 2rem;
-
-    @media (min-width: ${setBreakpoints.tablet}) {
-      width: 50%;
-      margin: 0 1.5rem 0 0;
-    }
-  }
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
+  @media (min-width: ${setBreakpoints.desktop}) {
+    max-width: 102.4rem;
+    width: 80%;
   }
 `
 
-const ModalDescription = styled.div`
-  width: 100%;
+const Modal = ({ setModalState }) => {
+  const handleToggleModal = () => setModalState((prevState) => !prevState)
 
-  @media (min-width: ${setBreakpoints.tablet}) {
-    width: 50%;
-    padding-left: 1.5rem;
-    border-left: 1px solid ${setColors.grey};
-  }
-
-  h2 {
-    margin-bottom: 2rem;
-  }
-`
-
-const Modal = ({ toggleModal, show }) => {
-  const content = show && (
+  return createPortal(
     <ModalOverlay>
-      <ModalContent>
-        <CloseBtn onClick={toggleModal}>&Chi;</CloseBtn>
-        <ModalInnerWrapper>
-          <figure>
-            <img src='https://dummyimage.com/600x400/000/fff' alt='' />
-          </figure>
-          <ModalDescription>
-            <h2>test</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, fugit quasi. Aliquid
-              aperiam fugit sequi!
-            </p>
-          </ModalDescription>
-        </ModalInnerWrapper>
-      </ModalContent>
-    </ModalOverlay>
+      <ModalWrapper>
+        <CloseBtn onClick={handleToggleModal}>&Chi;</CloseBtn>
+        <ModalContent />
+      </ModalWrapper>
+    </ModalOverlay>,
+    document.getElementById('modal-root'),
   )
-
-  return createPortal(content, document.getElementById('modal-root'))
 }
 
 export default Modal

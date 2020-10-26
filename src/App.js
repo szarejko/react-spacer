@@ -10,7 +10,7 @@ import { Modal } from 'components/index'
 const App = () => {
   const [showModal, setShowModal] = useState(true)
 
-  const handleToggleModal = () => setShowModal(false)
+  const modal = showModal && <Modal setModalState={setShowModal} />
 
   return (
     <Router>
@@ -22,7 +22,7 @@ const App = () => {
           <Route component={view.ErrorView} />
         </Switch>
       </Home>
-      <Modal toggleModal={handleToggleModal} show={showModal}/>
+      {modal}
     </Router>
   )
 }

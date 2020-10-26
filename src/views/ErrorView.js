@@ -1,4 +1,4 @@
-import { InnerWrapper, Wrapper } from 'components/globals/Wrapper'
+import { InnerWrapper, Wrapper } from 'components/global/Wrapper'
 
 import React from 'react'
 

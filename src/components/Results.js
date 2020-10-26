@@ -1,5 +1,5 @@
 import React from 'react'
-import { setBreakpoints } from 'components/globals/styles'
+import { setBreakpoints } from 'components/global/styles'
 import styled from 'styled-components'
 
 const List = styled.ul`

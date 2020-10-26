@@ -1,6 +1,6 @@
 import React from 'react'
 import bg_img from 'assets/bg/bg-mars.jpg'
-import { setColors } from 'components/globals/styles'
+import { setColors } from 'components/global/styles'
 import styled from 'styled-components'
 
 const HeroImg = styled.div`

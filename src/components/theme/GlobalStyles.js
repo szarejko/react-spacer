@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { setFontFamily } from 'components/globals/styles'
+import { setFontFamily } from 'components/global/styles'
 
 export const GlobalStyles = createGlobalStyle`
 * {
