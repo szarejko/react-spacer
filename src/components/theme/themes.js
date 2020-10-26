@@ -1,13 +1,13 @@
-import {setColors} from 'components/global/styles'
+import { setColors } from 'components/global/styles'
 
 export const darkTheme = {
   borderColor: `${setColors.black}`,
   textColor: `${setColors.black}`,
-  background: `${setColors.blackLightTransparent}`
+  background: `${setColors.blackLightTransparent}`,
 }
 
 export const lightTheme = {
   borderColor: `${setColors.primaryColor}`,
   textColor: `${setColors.primaryColor}`,
-  background: `${setColors.whiteLightTransparent}`
+  background: `${setColors.whiteLightTransparent}`,
 }
