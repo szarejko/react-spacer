@@ -56,6 +56,8 @@ const ListImgWrapper = styled.figure`
 const Results = ({ data }) => {
   const setShowModal = useContext(ModalContext)
 
+  console.log(data[0].title)
+
   const resultsList = data.map((item) => (
     <ListItem key={item.data[0].nasa_id} onClick={() => setShowModal((prevState) => !prevState)}>
       <ListImgWrapper>

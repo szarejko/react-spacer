@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <Router>
-      <GlobalStyles />
+      <GlobalStyles isModalOpen={showModal} />
       <ModalContext.Provider value={setShowModal}>
         <Home>
           <Switch>

@@ -21,6 +21,8 @@ html {
 }
 
 body {
+  height: ${({isModalOpen}) => isModalOpen ? '100vh' : null  };
+  overflow-y: ${({isModalOpen}) => isModalOpen ? 'hidden' : null  };
   font-family: ${setFontFamily.fontPrimary};
   font-size: 16px;
 }
