@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
+import { setBreakpoints, setColors } from 'components/global/styles'
 
-import ModalContext from "ModalContext";
-import { setBreakpoints } from 'components/global/styles'
+import ModalContext from 'ModalContext'
 import styled from 'styled-components'
 
 const List = styled.ul`
@@ -21,11 +21,11 @@ const List = styled.ul`
 const ListItem = styled.li`
   list-style: none;
   border-radius: 5px;
-  transition: filter .3s ease-in-out;
+  transition: filter 0.3s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    filter:sepia(80%);
+    filter: sepia(80%);
   }
 `
 
@@ -33,7 +33,7 @@ const ListImgWrapper = styled.figure`
   width: 80vw;
   height: 25rem;
   display: inline-block;
-  box-shadow: 0 8px 6px -8px black;
+  box-shadow: 0 0.8rem 0.6rem -0.8rem ${setColors.black};
 
   @media (min-width: ${setBreakpoints.tablet}) {
     width: 40vw;
@@ -57,7 +57,7 @@ const Results = ({ data }) => {
   const setShowModal = useContext(ModalContext)
 
   const resultsList = data.map((item) => (
-    <ListItem key={item.data[0].nasa_id} onClick={()=> setShowModal(prevState => !prevState)}>
+    <ListItem key={item.data[0].nasa_id} onClick={() => setShowModal((prevState) => !prevState)}>
       <ListImgWrapper>
         <img src={item.links[0].href} alt={item.data[0].title} />
       </ListImgWrapper>
