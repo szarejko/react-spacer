@@ -1,9 +1,10 @@
 import { HeroClaim, HeroImg, Input, Results } from 'components/index'
 import React, { useState } from 'react'
 
+import Spinner from 'components/global/Spinner'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
+const SearchWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +18,7 @@ const Wrapper = styled.div`
 const API_URL = 'https://images-api.nasa.gov/search'
 
 const Search = () => {
-  const [inputValue, setInputValue] = useState('black hole')
+  const [inputValue, setInputValue] = useState('hyperion')
   const [fetchData, setFetchData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [step, setStep] = useState(0)
@@ -27,9 +28,9 @@ const Search = () => {
   }
 
   const handleSearchInput = (e) => {
-    setIsLoading(true)
-
     if (e.key === 'Enter' || e.type === 'mousedown') {
+      setIsLoading(true)
+
       fetch(`${API_URL}?q=${inputValue}&media_type=image`)
         .then((response) => response.json())
         .then((response) => {
@@ -55,7 +56,7 @@ const Search = () => {
   const Result = fetchData && !isLoading && step === 1 ? <Results data={fetchData} /> : null
 
   return (
-    <Wrapper flexStart={step === 1}>
+    <SearchWrapper flexStart={step === 1}>
       {Hero}
       <Input
         handleSearch={handleSearchInput}
@@ -64,7 +65,8 @@ const Search = () => {
         theme={step === 1}
       />
       {Result}
-    </Wrapper>
+      {isLoading && <Spinner/>}
+    </SearchWrapper>
   )
 }
 
