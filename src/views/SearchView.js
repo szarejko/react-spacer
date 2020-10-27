@@ -65,7 +65,7 @@ const Search = () => {
         theme={step === 1}
       />
       {Result}
-      {isLoading && <Spinner/>}
+      {isLoading && <Spinner />}
     </SearchWrapper>
   )
 }
