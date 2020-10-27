@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import ModalContext from "ModalContext";
 import { setBreakpoints } from 'components/global/styles'
 import styled from 'styled-components'
 
@@ -52,8 +54,10 @@ const ListImgWrapper = styled.figure`
 `
 
 const Results = ({ data }) => {
+  const setShowModal = useContext(ModalContext)
+
   const resultsList = data.map((item) => (
-    <ListItem key={item.data[0].nasa_id}>
+    <ListItem key={item.data[0].nasa_id} onClick={()=> setShowModal(prevState => !prevState)}>
       <ListImgWrapper>
         <img src={item.links[0].href} alt={item.data[0].title} />
       </ListImgWrapper>
