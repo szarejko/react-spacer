@@ -45,7 +45,7 @@ const MainInputButton = styled.button`
   cursor: pointer;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  margin-left: 0.5rem;
+  margin-left: 0.2rem;
 
   &:hover {
     opacity: 0.3;
