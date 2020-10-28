@@ -14,7 +14,7 @@ const ModalOverlay = styled.div`
   bottom: 0;
   right: 0;
   z-index: 98;
-  overflow: auto;
+  overflow-y: auto;
   background-color: ${setColors.blackTransparent};
 `
 
