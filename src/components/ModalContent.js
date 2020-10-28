@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const ModalContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   @media (min-width: ${setBreakpoints.tablet}) {
     flex-direction: row;
@@ -36,23 +37,29 @@ const ModalDescription = styled.div`
     padding-left: 1.5rem;
     border-left: 1px solid ${setColors.grey};
   }
+
+  p {
+    margin-bottom: 1rem;
+  }
 `
 
 const Title = styled.h2`
   margin-bottom: 2rem;
 `
 
-const ModalContent = () => {
+const ModalContent = ({data}) => {
   return (
     <ModalContentWrapper>
       <ImgContainer>
-        <img src='https://dummyimage.com/600x400/000/fff' alt='' />
+        <img src={data.links[0].href} alt='' />
       </ImgContainer>
       <ModalDescription>
-        <Title>test</Title>
+        <Title>{data.data[0].title}</Title>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, fugit quasi. Aliquid
-          aperiam fugit sequi!
+          {data.data[0].secondary_creator}
+        </p>
+        <p>
+          {data.data[0].description}
         </p>
       </ModalDescription>
     </ModalContentWrapper>

@@ -45,14 +45,14 @@ const ModalWrapper = styled.div`
   }
 `
 
-const Modal = ({ setModalState }) => {
+const Modal = ({ setModalState, data }) => {
   const handleToggleModal = () => setModalState((prevState) => !prevState)
 
   return createPortal(
     <ModalOverlay>
       <ModalWrapper>
         <CloseBtn onClick={handleToggleModal}>&Chi;</CloseBtn>
-        <ModalContent />
+        <ModalContent data={data} />
       </ModalWrapper>
     </ModalOverlay>,
     document.getElementById('modal-root'),
