@@ -12,7 +12,7 @@ const App = () => {
   const [showModal, setShowModal] = useState(false)
   const [getData, setGetData] = useState({})
 
-  const modal = showModal && <Modal setModalState={setShowModal} data={getData}/>
+  const modal = showModal && <Modal setModalState={setShowModal} data={getData} />
 
   const handleGetData = (data) => {
     setGetData(data)

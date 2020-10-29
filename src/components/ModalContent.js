@@ -47,7 +47,7 @@ const Title = styled.h2`
   margin-bottom: 2rem;
 `
 
-const ModalContent = ({data}) => {
+const ModalContent = ({ data }) => {
   return (
     <ModalContentWrapper>
       <ImgContainer>
@@ -55,12 +55,8 @@ const ModalContent = ({data}) => {
       </ImgContainer>
       <ModalDescription>
         <Title>{data.data[0].title}</Title>
-        <p>
-          {data.data[0].secondary_creator}
-        </p>
-        <p>
-          {data.data[0].description}
-        </p>
+        <p>{data.data[0].secondary_creator}</p>
+        <p>{data.data[0].description}</p>
       </ModalDescription>
     </ModalContentWrapper>
   )

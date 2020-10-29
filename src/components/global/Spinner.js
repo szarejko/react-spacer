@@ -20,9 +20,9 @@ const SpinnerWrapper = styled.div`
 `
 
 const Spinner = () => (
-    <SpinnerWrapper>
-      <img src={`${spinner}`} alt='' />
-    </SpinnerWrapper>
+  <SpinnerWrapper>
+    <img src={`${spinner}`} alt='' />
+  </SpinnerWrapper>
 )
 
 export default Spinner
