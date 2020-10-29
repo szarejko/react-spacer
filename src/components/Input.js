@@ -4,12 +4,17 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import PropTypes from 'prop-types'
 import iconSearch from 'assets/icons/icon-search.png'
+import { setBreakpoints } from 'components/global/styles'
 
 const MainInputWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 2px;
   margin: 5rem 0;
+
+  @media (min-width: ${setBreakpoints.tablet}) {
+    margin: 8rem 0 5rem;
+  }
 `
 
 const MainInput = styled.input`
