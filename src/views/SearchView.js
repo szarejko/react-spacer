@@ -1,5 +1,5 @@
 import { HeroClaim, HeroImg, Input, Results } from 'components/index'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import Spinner from 'components/global/Spinner'
 import styled from 'styled-components'
@@ -18,17 +18,10 @@ const SearchWrapper = styled.div`
 const API_URL = 'https://images-api.nasa.gov/search'
 
 const Search = () => {
-  const [inputValue, setInputValue] = useState('sun')
+  const [inputValue, setInputValue] = useState('')
   const [fetchData, setFetchData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [step, setStep] = useState(0)
-
-  useEffect(() => {
-    if (inputValue === '') {
-      setIsLoading(false)
-      setStep(0)
-    }
-  }, [inputValue])
 
   const handleInputValue = (e) => {
     setInputValue(e.target.value)
