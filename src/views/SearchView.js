@@ -61,7 +61,7 @@ const Search = () => {
       </>
     ) : null
 
-  const Result = fetchData && !isLoading && step === 1 ? <Results data={fetchData} /> : null
+  const Result = fetchData && !isLoading && step === 1 ? <Results data={fetchData} input={inputValue} /> : null
 
   return (
     <SearchWrapper flexStart={step === 1}>

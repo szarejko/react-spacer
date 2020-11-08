@@ -53,8 +53,12 @@ const ListImgWrapper = styled.figure`
   }
 `
 
-const Results = ({ data }) => {
+const RESULTS_ERROR_MSG = 'Wrong search. Please, try again!'
+
+const Results = ({ data, input }) => {
   const [setShowModal, handleGetData] = useContext(ModalContext)
+
+  const inputLength = Boolean(input.length)
 
   const resultsList = data.map((item) => (
     <ListItem
@@ -70,7 +74,7 @@ const Results = ({ data }) => {
     </ListItem>
   ))
 
-  return <List>{resultsList}</List>
+  return data.length !== 0 ? <List>{resultsList}</List> : inputLength && <h1>{RESULTS_ERROR_MSG}</h1>
 }
 
 export default Results
