@@ -18,6 +18,7 @@ const MainInputWrapper = styled.div`
 const MainInputInnerWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: 0.6rem;
 `
 
 const MainInput = styled.input`
@@ -37,7 +38,9 @@ const MainInput = styled.input`
   background: ${({ theme }) => theme.background};
 
   &:focus {
-    outline: 1px solid ${setColors.red};
+    outline: none;
+    border: 1px solid;
+    border-color: ${({ validation }) => (validation ? 'green' : `${setColors.red}`)};
     caret-color: ${({ theme }) => theme.textColor};
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -64,17 +67,18 @@ const MainInputButton = styled.button`
 const InputErrorMsg = styled.span`
   color: ${setColors.red};
   display: inline-block;
-  margin-top: .6rem;
 `
 
 const IMPUT_ERROR_MSG = 'Please enter three or more letters.'
 
-const Input = ({ change, handleSearch, value, theme }) => {
+const Input = ({ change, handleSearch, value, theme, validation }) => {
   const searchInputRef = useRef(true)
 
   useEffect(() => {
     searchInputRef.current.focus()
   }, [])
+
+  const ErrorMsg = !validation && <InputErrorMsg>{IMPUT_ERROR_MSG}</InputErrorMsg>
 
   return (
     <ThemeProvider theme={lightTheme}>
@@ -87,10 +91,11 @@ const Input = ({ change, handleSearch, value, theme }) => {
             onKeyPress={handleSearch}
             theme={theme ? darkTheme : null}
             ref={searchInputRef}
+            validation={validation}
           />
           <MainInputButton theme={theme ? darkTheme : null} onMouseDown={handleSearch} />
         </MainInputInnerWrapper>
-        <InputErrorMsg>{IMPUT_ERROR_MSG}</InputErrorMsg>
+        {ErrorMsg}
       </MainInputWrapper>
     </ThemeProvider>
   )

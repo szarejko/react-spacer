@@ -22,26 +22,34 @@ const Search = () => {
   const [fetchData, setFetchData] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [step, setStep] = useState(0)
+  const [isValid, setIsValid] = useState(false)
 
   const handleInputValue = (e) => {
     setInputValue(e.target.value)
+    handleValidation(e)
+  }
+
+  const handleValidation = (e) => {
+    e.target.value.length < 3 ? setIsValid(false) : setIsValid(true)
   }
 
   const handleSearchInput = (e) => {
-    if (e.key === 'Enter' || e.type === 'mousedown') {
-      setIsLoading(true)
+    if (isValid) {
+      if (e.key === 'Enter' || e.type === 'mousedown') {
+        setIsLoading(true)
 
-      fetch(`${API_URL}?q=${inputValue}&media_type=image`)
-        .then((response) => response.json())
-        .then((response) => {
-          setFetchData(response.collection.items)
-          setIsLoading(false)
-          setStep(1)
-        })
-        .catch((err) => {
-          setIsLoading(false)
-          console.warn('Data download error', err)
-        })
+        fetch(`${API_URL}?q=${inputValue}&media_type=image`)
+          .then((response) => response.json())
+          .then((response) => {
+            setFetchData(response.collection.items)
+            setIsLoading(false)
+            setStep(1)
+          })
+          .catch((err) => {
+            setIsLoading(false)
+            throw new Error('Data download error', err)
+          })
+      }
     }
   }
 
@@ -63,6 +71,7 @@ const Search = () => {
         change={handleInputValue}
         value={inputValue}
         theme={step === 1}
+        validation={isValid}
       />
       {Result}
       {isLoading && <Spinner />}

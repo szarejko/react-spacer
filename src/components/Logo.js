@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom'
 import React from 'react'
 import iconLogo from 'assets/icons/icon-logo.svg'
 import { setBreakpoints } from 'components/global/styles'
 import styled from 'styled-components'
 
 const LogoWrapper = styled.figure`
+  cursor: pointer;
+
   img {
     display: block;
     max-width: 6rem;
@@ -17,12 +18,14 @@ const LogoWrapper = styled.figure`
 `
 
 const Logo = () => {
+  const reloadPage = () => {
+    window.location.reload()
+  }
+
   return (
-    <Link to='/'>
-      <LogoWrapper>
-        <img src={`${iconLogo}`} alt='Logo' />
-      </LogoWrapper>
-    </Link>
+    <LogoWrapper onClick={reloadPage}>
+      <img src={`${iconLogo}`} alt='Logo' />
+    </LogoWrapper>
   )
 }
 
