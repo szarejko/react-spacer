@@ -1,20 +1,23 @@
 import React, { useEffect, useRef } from 'react'
 import { darkTheme, lightTheme } from 'components/theme/themes'
+import { setBreakpoints, setColors } from 'components/global/styles'
 import styled, { ThemeProvider } from 'styled-components'
 
 import PropTypes from 'prop-types'
 import iconSearch from 'assets/icons/icon-search.png'
-import { setBreakpoints } from 'components/global/styles'
 
 const MainInputWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
   padding: 2px;
   margin: 5rem 0;
 
   @media (min-width: ${setBreakpoints.tablet}) {
     margin: 8rem 0 5rem;
   }
+`
+
+const MainInputInnerWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
 `
 
 const MainInput = styled.input`
@@ -34,6 +37,7 @@ const MainInput = styled.input`
   background: ${({ theme }) => theme.background};
 
   &:focus {
+    outline: 1px solid ${setColors.red};
     caret-color: ${({ theme }) => theme.textColor};
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -57,6 +61,14 @@ const MainInputButton = styled.button`
   }
 `
 
+const InputErrorMsg = styled.span`
+  color: ${setColors.red};
+  display: inline-block;
+  margin-top: .6rem;
+`
+
+const IMPUT_ERROR_MSG = 'Please enter three or more letters.'
+
 const Input = ({ change, handleSearch, value, theme }) => {
   const searchInputRef = useRef(true)
 
@@ -67,15 +79,18 @@ const Input = ({ change, handleSearch, value, theme }) => {
   return (
     <ThemeProvider theme={lightTheme}>
       <MainInputWrapper>
-        <MainInput
-          type='text'
-          value={value}
-          onChange={change}
-          onKeyPress={handleSearch}
-          theme={theme ? darkTheme : null}
-          ref={searchInputRef}
-        />
-        <MainInputButton theme={theme ? darkTheme : null} onMouseDown={handleSearch} />
+        <MainInputInnerWrapper>
+          <MainInput
+            type='text'
+            value={value}
+            onChange={change}
+            onKeyPress={handleSearch}
+            theme={theme ? darkTheme : null}
+            ref={searchInputRef}
+          />
+          <MainInputButton theme={theme ? darkTheme : null} onMouseDown={handleSearch} />
+        </MainInputInnerWrapper>
+        <InputErrorMsg>{IMPUT_ERROR_MSG}</InputErrorMsg>
       </MainInputWrapper>
     </ThemeProvider>
   )
