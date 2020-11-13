@@ -1,9 +1,8 @@
-import React from 'react'
 import bg_img from 'assets/bg/bg-mars.jpg'
 import { setColors } from 'components/global/styles'
 import styled from 'styled-components'
 
-const HeroImg = styled.div`
+export const HeroImg = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +11,7 @@ const HeroImg = styled.div`
   background-image: url('${({ img }) => img || bg_img}');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 00%;
+  background-position: 50% 0%;
   z-index: -1;
 
   &::after {
@@ -26,7 +25,3 @@ const HeroImg = styled.div`
     background-color: rgba(${setColors.black}, 0.2);
   }
 `
-
-const HeroImage = () => <HeroImg />
-
-export default HeroImage

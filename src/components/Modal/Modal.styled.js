@@ -1,12 +1,8 @@
 import { setBreakpoints, setColors, setShadow } from 'components/global/styles'
 
-import { CloseBtn } from 'components/global/CloseBtn'
-import { ModalContent } from 'components/index'
-import React from 'react'
-import { createPortal } from 'react-dom'
 import styled from 'styled-components'
 
-const ModalOverlay = styled.div`
+export const ModalOverlay = styled.div`
   display: block;
   position: fixed;
   top: 0;
@@ -18,7 +14,7 @@ const ModalOverlay = styled.div`
   background-color: ${setColors.blackTransparent};
 `
 
-const ModalWrapper = styled.div`
+export const ModalWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -44,19 +40,3 @@ const ModalWrapper = styled.div`
     width: 80%;
   }
 `
-
-const Modal = ({ setModalState, data }) => {
-  const handleToggleModal = () => setModalState((prevState) => !prevState)
-
-  return createPortal(
-    <ModalOverlay>
-      <ModalWrapper>
-        <CloseBtn onClick={handleToggleModal}>&Chi;</CloseBtn>
-        <ModalContent data={data} />
-      </ModalWrapper>
-    </ModalOverlay>,
-    document.getElementById('modal-root'),
-  )
-}
-
-export default Modal

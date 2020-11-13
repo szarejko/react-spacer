@@ -1,19 +1,8 @@
-import { HeroClaim, HeroImg, Input, Results } from 'components/index'
+import { HeroClaim, HeroImg, MainInput, Results } from 'components/index'
 import React, { useState } from 'react'
 
+import { SearchWrapper } from './SearchView.styled'
 import Spinner from 'components/global/Spinner'
-import styled from 'styled-components'
-
-const SearchWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: ${(props) => (props.flexStart ? 'flex-start' : 'center')};
-  margin: 0;
-  padding: 3rem;
-  min-height: 100vh;
-  width: 100%;
-`
 
 const API_URL = 'https://images-api.nasa.gov/search'
 
@@ -53,7 +42,7 @@ const Search = () => {
     }
   }
 
-  const Hero =
+  const hero =
     step === 0 ? (
       <>
         <HeroImg />
@@ -61,19 +50,19 @@ const Search = () => {
       </>
     ) : null
 
-  const Result = fetchData && !isLoading && step === 1 ? <Results data={fetchData} input={inputValue} /> : null
+  const result = fetchData && !isLoading && step === 1 ? <Results data={fetchData} input={inputValue} /> : null
 
   return (
     <SearchWrapper flexStart={step === 1}>
-      {Hero}
-      <Input
+      {hero}
+      <MainInput
         handleSearch={handleSearchInput}
         change={handleInputValue}
         value={inputValue}
         theme={step === 1}
         validation={isValid}
       />
-      {Result}
+      {result}
       {isLoading && <Spinner />}
     </SearchWrapper>
   )

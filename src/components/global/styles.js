@@ -16,6 +16,7 @@ export const setColors = {
   grey: `rgb(128,128,128)`,
   yellow: `rgb(236, 159, 5)`,
   red: `rgb(255, 78, 0)`,
+  green: `rgb(0, 230, 64)`,
   whiteLightTransparent: 'rgba(255, 255, 255, .2)',
   whiteTransparent: 'rgba(255, 255, 255, .8)',
   blackLightTransparent: 'rgba(0, 0, 0, .1)',

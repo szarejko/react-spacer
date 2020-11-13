@@ -3,7 +3,7 @@ import * as view from 'views/index'
 import React, { useState } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
-import { GlobalStyles } from './components/theme/GlobalStyles'
+import { GlobalStyles } from './components/global/GlobalStyles'
 import Home from 'Home'
 import { Modal } from 'components/index'
 import ModalContext from 'ModalContext'
@@ -25,6 +25,7 @@ const App = () => {
         <Home>
           <Switch>
             <Route path='/' exact component={view.SearchView} />
+            <Route path='/apotd' exact component={view.AstroPictureView} />
             <Route path='/about' component={view.AboutView} />
             <Route component={view.ErrorView} />
           </Switch>

@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
 import { setBreakpoints, setColors } from 'components/global/styles'
 
-import ModalContext from 'ModalContext'
 import styled from 'styled-components'
 
-const List = styled.ul`
+export const ResultsList = styled.ul`
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 1fr;
@@ -18,7 +16,7 @@ const List = styled.ul`
   }
 `
 
-const ListItem = styled.li`
+export const ResultsListItem = styled.li`
   list-style: none;
   border-radius: 5px;
   transition: filter 0.3s ease-in-out;
@@ -29,7 +27,7 @@ const ListItem = styled.li`
   }
 `
 
-const ListImgWrapper = styled.figure`
+export const ResultsImgWrapper = styled.figure`
   width: 80vw;
   height: 25rem;
   display: inline-block;
@@ -52,29 +50,3 @@ const ListImgWrapper = styled.figure`
     height: 100%;
   }
 `
-
-const RESULTS_ERROR_MSG = 'Wrong search. Please, try again!'
-
-const Results = ({ data, input }) => {
-  const [setShowModal, handleGetData] = useContext(ModalContext)
-
-  const inputLength = Boolean(input.length)
-
-  const resultsList = data.map((item) => (
-    <ListItem
-      key={item.data[0].nasa_id}
-      onClick={() => {
-        setShowModal((prevState) => !prevState)
-        handleGetData(item)
-      }}
-    >
-      <ListImgWrapper>
-        <img src={item.links[0].href} alt={item.data[0].title} />
-      </ListImgWrapper>
-    </ListItem>
-  ))
-
-  return data.length !== 0 ? <List>{resultsList}</List> : inputLength && <h1>{RESULTS_ERROR_MSG}</h1>
-}
-
-export default Results

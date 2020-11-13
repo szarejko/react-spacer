@@ -1,5 +1,6 @@
-import AboutView from './AboutView'
-import ErrorView from './ErrorView'
-import SearchView from './SearchView'
+import AboutView from './AboutView/AboutView'
+import AstroPictureView from './AstroPictureView/AstroPictureView'
+import ErrorView from './ErrorView/ErrorView'
+import SearchView from './SearchView/SearchView'
 
-export { SearchView, AboutView, ErrorView }
+export { SearchView, AboutView, ErrorView, AstroPictureView }

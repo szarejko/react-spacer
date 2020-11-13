@@ -1,10 +1,9 @@
 import { setBreakpoints, setColors } from 'components/global/styles'
 
-import React from 'react'
-import { fadeIn } from 'components/global/Animations'
+import { fadeIn } from 'components/global/animations'
 import styled from 'styled-components'
 
-const ClaimWrapper = styled.div`
+export const ClaimWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +11,7 @@ const ClaimWrapper = styled.div`
   text-align: center;
 `
 
-const Claim = styled.h1`
+export const Claim = styled.h1`
   font-size: 50px;
   font-weight: bold;
   color: ${setColors.primaryColor};
@@ -27,7 +26,7 @@ const Claim = styled.h1`
   }
 `
 
-const SubClaim = styled.p`
+export const SubClaim = styled.p`
   margin-top: 2rem;
   font-size: 15px;
   color: ${setColors.primaryColor};
@@ -39,17 +38,3 @@ const SubClaim = styled.p`
     letter-spacing: 1px;
   }
 `
-
-const HeroClaim = () => {
-  return (
-    <ClaimWrapper>
-      <Claim>SPACER</Claim>
-      <SubClaim>
-        Begin your journey through our amazing galaxy, and discover places you never heard of.
-      </SubClaim>
-      <SubClaim>Type anything space-related and hit "ENTER" to start.</SubClaim>
-    </ClaimWrapper>
-  )
-}
-
-export default HeroClaim

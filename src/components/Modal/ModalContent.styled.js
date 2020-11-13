@@ -1,9 +1,8 @@
 import { setBreakpoints, setColors } from 'components/global/styles'
 
-import React from 'react'
 import styled from 'styled-components'
 
-const ModalContentWrapper = styled.div`
+export const ModalContWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -13,7 +12,7 @@ const ModalContentWrapper = styled.div`
   }
 `
 
-const ImgContainer = styled.figure`
+export const ModalImgCont = styled.figure`
   width: 100%;
   margin-bottom: 2rem;
 
@@ -29,7 +28,7 @@ const ImgContainer = styled.figure`
   }
 `
 
-const ModalDescription = styled.div`
+export const ModalDescription = styled.div`
   width: 100%;
 
   @media (min-width: ${setBreakpoints.tablet}) {
@@ -43,23 +42,6 @@ const ModalDescription = styled.div`
   }
 `
 
-const Title = styled.h2`
+export const Title = styled.h2`
   margin-bottom: 2rem;
 `
-
-const ModalContent = ({ data }) => {
-  return (
-    <ModalContentWrapper>
-      <ImgContainer>
-        <img src={data.links[0].href} alt='' />
-      </ImgContainer>
-      <ModalDescription>
-        <Title>{data.data[0].title}</Title>
-        <p>{data.data[0].secondary_creator}</p>
-        <p>{data.data[0].description}</p>
-      </ModalDescription>
-    </ModalContentWrapper>
-  )
-}
-
-export default ModalContent
