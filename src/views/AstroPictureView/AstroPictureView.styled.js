@@ -1,9 +1,16 @@
+import { setBreakpoints, setGradient } from 'components/global/styles'
+
 import styled from 'styled-components';
 
 export const PictureBoxWrapper = styled.div`
   width: 100%;
-  background-color: grey;
+  background: ${setGradient.main};
   height: 100vh;
-  padding-top: 100px;
-  margin-top: -55px;
+  padding-top: 5.5rem;
+  margin-top: -5.5rem;
+
+  @media (min-width: ${setBreakpoints.tablet}) {
+    padding-top: 10rem;
+    margin-top: -10rem;
+  }
 `

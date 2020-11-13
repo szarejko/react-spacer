@@ -1,16 +1,16 @@
 export const setBreakpoints = {
   tablet: '768px',
-  desktop: '1024px'
+  desktop: '1024px',
 }
 
 export const setFontFamily = {
-  fontPrimary: '"Roboto", "sans-serif"'
+  fontPrimary: '"Roboto", "sans-serif"',
 }
 
 export const setColors = {
   primaryColor: 'rgb(255, 255, 255)',
   secondaryColor: 'rgb(104,104,104)',
-  linkColor: 'rgb(237,235,200)',
+  linkColor: 'rgb(168,106,32)',
   pale: 'rgb(220,220,220)',
   black: 'rgb(0, 0, 0)',
   grey: `rgb(128,128,128)`,
@@ -24,9 +24,10 @@ export const setColors = {
 }
 
 export const setGradient = {
-  main: `linear-gradient(315deg, ${setColors.red} 0%, ${setColors.yellow} 65%);`
+  main: `linear-gradient(315deg, ${setColors.red} 0%, ${setColors.yellow} 65%);`,
 }
 
 export const setShadow = {
-  main: `0 .4rem .8rem 0 rgba(${setColors.black}, 0.2), 0 .6rem 2rem 0 rgba(${setColors.black}, 0.2);`
+  main: `0 .4rem .8rem 0 rgba(${setColors.black}, 0.2), 0 .6rem 2rem 0 rgba(${setColors.black}, 0.2);`,
+  second: `rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;`,
 }

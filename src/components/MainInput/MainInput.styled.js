@@ -26,13 +26,17 @@ export const Input = styled.input`
   height: 3.5rem;
   padding-left: 3.5rem;
   border: 0;
-  font-size: 18px;
+  font-size: 15px;
   text-align: center;
   transition: all 0.5s;
   background: none;
 
   color: ${({ theme }) => theme.textColor};
   background: ${({ theme }) => theme.background};
+
+  @media (min-width: ${setBreakpoints.tablet}) {
+    font-size: 18px;
+  }
 
   &:focus,
   &:active {

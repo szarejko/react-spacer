@@ -28,7 +28,7 @@ export const Link = styled(NavLink)`
   word-spacing: -1px;
 
   @media (min-width: ${setBreakpoints.tablet}) {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   &:first-child {
