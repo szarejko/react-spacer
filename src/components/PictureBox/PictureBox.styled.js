@@ -10,6 +10,10 @@ const WRAP_STYLES = {
 export const PictureWrapper = styled.section`
   width: 100%;
   position: relative;
+
+  div {
+    margin: 0 auto;
+  }
 `
 
 export const PictureImgWrapper = styled.figure`

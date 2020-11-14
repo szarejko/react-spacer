@@ -1,8 +1,15 @@
-import { Loader, PictureImgWrapper, PictureText, PictureWrapper, PictureWrapperBottom } from './PictureBox.styled'
+import {
+  Loader,
+  PictureImgWrapper,
+  PictureText,
+  PictureWrapper,
+  PictureWrapperBottom,
+} from './PictureBox.styled'
 import React, { useState } from 'react'
 
 import { DateInput } from 'components/index'
 import IconButton from '../global/IconButton/IconButton'
+import ReactPlayer from 'react-player/youtube'
 import favoriteFolderIco from '../../assets/icons/icon-favorite-folder.png'
 import favoriteIco from '../../assets/icons/icon-favorite.png'
 import { useFetch } from 'components/hooks/useFetch'
@@ -29,10 +36,12 @@ const PictureBox = () => {
 
   const loader = res.isLoading && <Loader>Loading...</Loader>
 
-  const dataSource = resUrl.includes(".jpg" || ".jpeg") ? (
+  const dataSource = resUrl.includes('.jpg' || '.jpeg') ? (
     <img src={resUrl} alt={resTitle} />
   ) : (
-    null
+    <div>
+      <ReactPlayer url={resUrl} />
+    </div>
   )
 
   return (
