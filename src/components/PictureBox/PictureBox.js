@@ -5,7 +5,7 @@ import {
   PictureWrapper,
   PictureWrapperBottom,
 } from './PictureBox.styled'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { DateInput } from 'components/index'
 import IconButton from '../global/IconButton/IconButton'
@@ -19,10 +19,21 @@ const API_URL_APOD =
 
 const API_START_DATE = new Date().toISOString().split('T')[0]
 
+const GET_STORAGE_PIC = localStorage.getItem('favoritePhoto')
+
 const PictureBox = () => {
   const [date, setDate] = useState(API_START_DATE)
+  const [favorite, setFavorite] = useState('')
+
+  useEffect(() => {
+    localStorage.setItem('favoritePhoto', favorite)
+  }, [favorite])
 
   const handleInputValue = (e) => setDate(e.target.value)
+
+  const showFavorite = () => {
+    setDate(GET_STORAGE_PIC)
+  }
 
   const res = useFetch(`${API_URL_APOD}date=${date}`, {})
 
@@ -36,7 +47,7 @@ const PictureBox = () => {
 
   const loader = res.isLoading && <Loader>Loading...</Loader>
 
-  const dataSource = resUrl.includes('.jpg' || '.jpeg') ? (
+  const dataSource = /\.(gif|jpg|jpeg|png)$/i.test(resUrl) ? (
     <img src={resUrl} alt={resTitle} />
   ) : (
     <div>
@@ -55,8 +66,12 @@ const PictureBox = () => {
         </PictureImgWrapper>
       </PictureWrapper>
       <PictureWrapperBottom>
-        <IconButton icon={favoriteIco}>add to favorite</IconButton>
-        <IconButton icon={favoriteFolderIco}>show favorite</IconButton>
+        <IconButton icon={favoriteIco} onClick={() => setFavorite(resImgDate)}>
+          add to favorite
+        </IconButton>
+        <IconButton icon={favoriteFolderIco} onClick={() => showFavorite()}>
+          show favorite
+        </IconButton>
       </PictureWrapperBottom>
     </>
   )
