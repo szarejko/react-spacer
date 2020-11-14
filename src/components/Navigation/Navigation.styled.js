@@ -26,6 +26,7 @@ export const Link = styled(NavLink)`
   color: ${setColors.linkColor};
   font-size: 15px;
   word-spacing: -1px;
+  border-bottom: .2rem solid transparent;
 
   @media (min-width: ${setBreakpoints.tablet}) {
     font-size: 20px;
@@ -39,9 +40,12 @@ export const Link = styled(NavLink)`
     }
   }
 
-  &.isActive,
   &:hover {
-    text-decoration: underline;
+    border-bottom: .2rem solid ${setColors.linkColor};
+  }
+
+  &.isActive {
+    /* text-decoration: underline; */
     font-weight: bold;
   }
 `

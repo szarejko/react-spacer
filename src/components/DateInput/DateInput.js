@@ -7,7 +7,7 @@ const DateInput = ({ date, change, startDate }) => {
 
   return (
     <DateInputWrapper>
-      <label htmlFor='dateID'>Select a photo of the day:</label>
+      <label htmlFor='dateID'>Astronomy Picture of the Day:</label>
       <input id='dateID' type='date' name='date' value={date} onChange={change} min={minDate} max={startDate}/>
     </DateInputWrapper>
   )

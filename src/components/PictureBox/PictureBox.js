@@ -1,4 +1,4 @@
-import { Loader, PictureImgWrapper, PictureText, PictureWrapper } from './PictureBox.styled'
+import { Loader, PictureImgWrapper, PictureText, PictureWrapper, PictureWrapperBottom } from './PictureBox.styled'
 import React, { useState } from 'react'
 
 import { DateInput } from 'components/index'
@@ -29,20 +29,26 @@ const PictureBox = () => {
 
   const loader = res.isLoading && <Loader>Loading...</Loader>
 
+  const dataSource = resUrl.includes(".jpg" || ".jpeg") ? (
+    <img src={resUrl} alt={resTitle} />
+  ) : (
+    null
+  )
+
   return (
     <>
       <DateInput date={date} startDate={API_START_DATE} change={handleInputValue} />
       <PictureWrapper>
         {loader}
         <PictureImgWrapper>
-          <PictureText>Astronomy Picture of the Day: {resImgDate}</PictureText>
-          <img src={resUrl} alt={resTitle} />
+          <PictureText>APOTD from: {resImgDate}</PictureText>
+          {dataSource}
         </PictureImgWrapper>
       </PictureWrapper>
-      <div>
+      <PictureWrapperBottom>
         <IconButton icon={favoriteIco}>add to favorite</IconButton>
         <IconButton icon={favoriteFolderIco}>show favorite</IconButton>
-      </div>
+      </PictureWrapperBottom>
     </>
   )
 }

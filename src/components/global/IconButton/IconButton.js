@@ -1,13 +1,12 @@
+import { IcoButton } from './IconButton.styled'
 import React from 'react'
 
-const IconButton = ({children, icon}) => {
+const IconButton = ({ children, icon, ...props }) => {
   return (
-    <>
-      <button>
-        <img src={icon} alt='' />
-        {children}
-      </button>
-    </>
+    <IcoButton {...props}>
+      <img src={icon} alt='' />
+      {children}
+    </IcoButton>
   )
 }
 

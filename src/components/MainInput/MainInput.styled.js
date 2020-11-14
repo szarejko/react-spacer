@@ -22,9 +22,8 @@ export const Input = styled.input`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 25rem;
+  width: 20rem;
   height: 3.5rem;
-  padding-left: 3.5rem;
   border: 0;
   font-size: 15px;
   text-align: center;
@@ -35,6 +34,7 @@ export const Input = styled.input`
   background: ${({ theme }) => theme.background};
 
   @media (min-width: ${setBreakpoints.tablet}) {
+    width: 25rem;
     font-size: 18px;
   }
 
