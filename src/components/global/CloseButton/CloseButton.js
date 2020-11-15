@@ -1,8 +1,8 @@
-import { setBreakpoints, setColors } from 'components/global/styles'
+import { setBreakpoints, setColors } from 'global-styles/styles'
 
 import styled from 'styled-components'
 
-export const CloseBtn = styled.button`
+export const CloseButton = styled.button`
   font-size: 20px;
   font-weight: bold;
   padding: 0.5rem 1rem;

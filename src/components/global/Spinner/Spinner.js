@@ -1,5 +1,5 @@
 import React from 'react'
-import spinner from '../../assets/animated_icons/spinner.svg'
+import spinner from 'assets/animated_icons/spinner.svg'
 import styled from 'styled-components'
 
 const SpinnerWrapper = styled.div`

@@ -1,4 +1,4 @@
-import { setColors } from 'components/global/styles'
+import { setColors } from 'global-styles/styles'
 
 export const darkTheme = {
   borderColor: `${setColors.black}`,

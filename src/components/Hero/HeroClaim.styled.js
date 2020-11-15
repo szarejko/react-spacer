@@ -1,6 +1,6 @@
-import { setBreakpoints, setColors } from 'components/global/styles'
+import { setBreakpoints, setColors } from 'global-styles/styles'
 
-import { fadeIn } from 'components/global/animations'
+import { fadeIn } from 'global-styles/animations'
 import styled from 'styled-components'
 
 export const ClaimWrapper = styled.div`

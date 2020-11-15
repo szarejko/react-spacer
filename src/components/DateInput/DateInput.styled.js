@@ -1,4 +1,4 @@
-import { setColors } from 'components/global/styles'
+import { setColors } from 'global-styles/styles'
 import styled from 'styled-components'
 
 const INPUT_MAX_WIDTH = {

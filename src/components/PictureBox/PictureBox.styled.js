@@ -1,4 +1,4 @@
-import { setBreakpoints, setColors, setShadow } from 'components/global/styles'
+import { setBreakpoints, setColors, setShadow } from 'global-styles/styles'
 
 import styled from 'styled-components'
 

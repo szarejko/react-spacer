@@ -1,4 +1,4 @@
-import { setBreakpoints, setColors } from 'components/global/styles'
+import { setBreakpoints, setColors } from 'global-styles/styles'
 
 import iconSearch from 'assets/icons/icon-search.png'
 import styled from 'styled-components'

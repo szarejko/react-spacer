@@ -1,5 +1,5 @@
 import { AboutPlainText, AboutTitle } from "./AboutView.styled";
-import { InnerWrapper, Wrapper } from 'components/global/Wrapper'
+import { InnerWrapper, Wrapper } from 'components/global/Wrapper/Wrapper'
 
 import React from 'react'
 

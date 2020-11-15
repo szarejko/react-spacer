@@ -1,6 +1,6 @@
 import { ModalOverlay, ModalWrapper } from './Modal.styled'
 
-import { CloseBtn } from 'components/global/CloseBtn'
+import { CloseButton } from 'components/global/CloseButton/CloseButton'
 import { ModalContent } from 'components/index'
 import React from 'react'
 import { createPortal } from 'react-dom'
@@ -13,7 +13,7 @@ const Modal = ({ setModalState, data }) => {
   return createPortal(
     <ModalOverlay>
       <ModalWrapper>
-        <CloseBtn onClick={handleToggleModal}>&Chi;</CloseBtn>
+        <CloseButton onClick={handleToggleModal}>&Chi;</CloseButton>
         <ModalContent data={data} />
       </ModalWrapper>
     </ModalOverlay>,

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { ResultsImgWrapper, ResultsList, ResultsListItem } from './Results.styled'
 
-import ModalContext from 'ModalContext'
+import ModalContext from 'context/ModalContext'
 
 const RESULTS_ERROR_MSG = 'Wrong search. Please, try again!'
 

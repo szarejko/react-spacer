@@ -2,7 +2,7 @@ import { HeroClaim, HeroImg, MainInput, Results } from 'components/index'
 import React, { useState } from 'react'
 
 import { SearchWrapper } from './SearchView.styled'
-import Spinner from 'components/global/Spinner'
+import Spinner from 'components/global/Spinner/Spinner'
 
 const API_URL = 'https://images-api.nasa.gov/search'
 

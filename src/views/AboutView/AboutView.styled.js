@@ -1,4 +1,4 @@
-import { setBreakpoints } from 'components/global/styles'
+import { setBreakpoints } from 'global-styles/styles'
 import styled from 'styled-components'
 
 export const AboutTitle = styled.h1`

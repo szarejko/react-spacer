@@ -1,4 +1,4 @@
-import { setBreakpoints, setGradient } from 'components/global/styles'
+import { setBreakpoints, setGradient } from 'global-styles/styles'
 
 import styled from 'styled-components'
 

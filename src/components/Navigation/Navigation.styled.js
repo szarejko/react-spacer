@@ -1,4 +1,4 @@
-import { setBreakpoints, setColors } from 'components/global/styles'
+import { setBreakpoints, setColors } from 'global-styles/styles'
 
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
@@ -26,7 +26,7 @@ export const Link = styled(NavLink)`
   color: ${setColors.linkColor};
   font-size: 15px;
   word-spacing: -1px;
-  border-bottom: .2rem solid transparent;
+  border-bottom: 0.2rem solid transparent;
 
   @media (min-width: ${setBreakpoints.tablet}) {
     font-size: 20px;
@@ -41,7 +41,7 @@ export const Link = styled(NavLink)`
   }
 
   &:hover {
-    border-bottom: .2rem solid ${setColors.linkColor};
+    border-bottom: 0.2rem solid ${setColors.linkColor};
   }
 
   &.isActive {

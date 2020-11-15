@@ -12,7 +12,7 @@ import IconButton from '../global/IconButton/IconButton'
 import ReactPlayer from 'react-player/youtube'
 import favoriteFolderIco from '../../assets/icons/icon-favorite-folder.png'
 import favoriteIco from '../../assets/icons/icon-favorite.png'
-import { useFetch } from 'components/hooks/useFetch'
+import { useFetch } from 'hooks/useFetch/useFetch'
 
 const API_URL_APOD =
   'https://api.nasa.gov/planetary/apod?api_key=obhXZx8NW2EhzDLTC5ARefUMQA8lNtYRaHNdW8hn&'

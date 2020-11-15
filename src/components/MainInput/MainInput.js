@@ -1,6 +1,12 @@
-import { Input, InputButton, InputErrorMsg, InputInnerWrapper, InputWrapper } from './MainInput.styled'
+import {
+  Input,
+  InputButton,
+  InputErrorMsg,
+  InputInnerWrapper,
+  InputWrapper,
+} from './MainInput.styled'
 import React, { useEffect, useRef } from 'react'
-import { darkTheme, lightTheme } from 'components/theme/themes'
+import { darkTheme, lightTheme } from 'theme/themes'
 
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'

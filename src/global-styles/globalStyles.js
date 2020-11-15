@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import { setFontFamily } from 'components/global/styles'
+import { setFontFamily } from 'global-styles/styles'
 
 export const GlobalStyles = createGlobalStyle`
 * {
@@ -21,9 +21,9 @@ html {
 }
 
 body {
-  height: ${({isModalOpen}) => isModalOpen ? '100vh' : null  };
-  overflow: ${({isModalOpen}) => isModalOpen ? 'auto' : null  };
-  overflow-x: ${({isModalOpen}) => isModalOpen ? 'hidden' : null  };
+  height: ${({ isModalOpen }) => (isModalOpen ? '100vh' : null)};
+  overflow: ${({ isModalOpen }) => (isModalOpen ? 'auto' : null)};
+  overflow-x: ${({ isModalOpen }) => (isModalOpen ? 'hidden' : null)};
   font-family: ${setFontFamily.fontPrimary};
   font-size: 16px;
 }

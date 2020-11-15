@@ -1,5 +1,5 @@
 import bg_img from 'assets/bg/bg-mars.jpg'
-import { setColors } from 'components/global/styles'
+import { setColors } from 'global-styles/styles'
 import styled from 'styled-components'
 
 export const HeroImg = styled.div`
