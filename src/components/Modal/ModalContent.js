@@ -6,7 +6,7 @@ const ModalContent = ({ data }) => {
   return (
     <ModalContWrapper>
       <ModalImgCont>
-        <img src={data.links[0].href} alt='' />
+        <img src={data.links[0].href} alt=''/>
       </ModalImgCont>
       <ModalDescription>
         <Title>{data.data[0].title}</Title>

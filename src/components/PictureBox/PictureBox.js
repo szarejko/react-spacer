@@ -10,8 +10,8 @@ import React, { useEffect, useState } from 'react'
 import { DateInput } from 'components/index'
 import IconButton from '../global/IconButton/IconButton'
 import ReactPlayer from 'react-player/youtube'
-import favoriteFolderIco from '../../assets/icons/icon-favorite-folder.png'
-import favoriteIco from '../../assets/icons/icon-favorite.png'
+import favoriteFolderIco from 'assets/icons/icon-favorite-folder.png'
+import favoriteIco from 'assets/icons/icon-favorite.png'
 import { useFetch } from 'hooks/useFetch/useFetch'
 
 const API_URL_APOD =

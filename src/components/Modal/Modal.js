@@ -1,23 +1,51 @@
-import { ModalOverlay, ModalWrapper } from './Modal.styled'
+import { ModalBtnWrapper, ModalOverlay, ModalWrapper } from './Modal.styled'
+import React, { useEffect, useState } from 'react'
 
 import { CloseButton } from 'components/global/CloseButton/CloseButton'
 import { ModalContent } from 'components/index'
-import React from 'react'
 import { createPortal } from 'react-dom'
 
-const Modal = ({ setModalState, data }) => {
+let index = 0
+let length
+
+const Modal = ({ setModalState, data, allData }) => {
+  const [modalData, setModalData] = useState(data)
+
+  const modalDataID = data.data[0].nasa_id
+  let dataIndex = allData.findIndex((item) => item.data[0].nasa_id === modalDataID)
+  length = allData.length - 1
+
+  useEffect(() => {
+    index = dataIndex
+  }, [dataIndex])
+
   const handleToggleModal = () => setModalState((prevState) => !prevState)
 
-  const MODAL_ROOT = document.getElementById('modal-root')
+  const showPrevPage = () => {
+    if (index === 0) return index
+    setModalData(allData[(index -= 1)])
+  }
+
+  const showNextPage = () => {
+    if (index === length) return index
+    setModalData(allData[(index += 1)])
+  }
 
   return createPortal(
     <ModalOverlay>
       <ModalWrapper>
         <CloseButton onClick={handleToggleModal}>&Chi;</CloseButton>
-        <ModalContent data={data} />
+        <ModalContent data={modalData} />
+        <ModalBtnWrapper>
+          <span>
+            {index + 1} / {length + 1}
+          </span>
+          <button onClick={showPrevPage}>&lt; Previous</button>
+          <button onClick={showNextPage}>Next &gt;</button>
+        </ModalBtnWrapper>
       </ModalWrapper>
     </ModalOverlay>,
-    MODAL_ROOT,
+    document.getElementById('modal-root'),
   )
 }
 

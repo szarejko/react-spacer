@@ -40,3 +40,11 @@ export const ModalWrapper = styled.div`
     width: 80%;
   }
 `
+
+export const ModalBtnWrapper = styled.div`
+
+  button {
+    margin-left: 1rem;
+    padding: .5rem 1rem;
+  }
+`

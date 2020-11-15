@@ -10,18 +10,25 @@ import ModalContext from 'context/ModalContext'
 
 const App = () => {
   const [showModal, setShowModal] = useState(false)
-  const [getData, setGetData] = useState({})
+  const [getModalData, setGetModalData] = useState({})
+  const [getAllData, setGetAllData] = useState({})
 
-  const handleGetData = (data) => {
-    setGetData(data)
+  const handleGetModalData = (data) => {
+    setGetModalData(data)
   }
 
-  const modal = showModal && <Modal setModalState={setShowModal} data={getData} />
+  const handleGetAllFetchData = (data) => {
+    setGetAllData(data)
+  }
+
+  const modal = showModal && (
+    <Modal setModalState={setShowModal} data={getModalData} allData={getAllData} />
+  )
 
   return (
     <Router>
       <GlobalStyles isModalOpen={showModal} />
-      <ModalContext.Provider value={[setShowModal, handleGetData]}>
+      <ModalContext.Provider value={[setShowModal, handleGetModalData, handleGetAllFetchData]}>
         <Home>
           <Switch>
             <Route path='/' exact component={view.SearchView} />

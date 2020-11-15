@@ -6,7 +6,7 @@ import ModalContext from 'context/ModalContext'
 const RESULTS_ERROR_MSG = 'Wrong search. Please, try again!'
 
 const Results = ({ data, input }) => {
-  const [setShowModal, handleGetData] = useContext(ModalContext)
+  const [setShowModal, handleGetData, handleGetAllData] = useContext(ModalContext)
 
   const inputLength = input.length
 
@@ -16,6 +16,7 @@ const Results = ({ data, input }) => {
       onClick={() => {
         setShowModal((prevState) => !prevState)
         handleGetData(item)
+        handleGetAllData(data)
       }}
     >
       <ResultsImgWrapper>
