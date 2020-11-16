@@ -4,7 +4,7 @@ import React, { useContext } from 'react'
 
 import ModalContext from 'context/ModalContext'
 
-const RESULTS_ERROR_MSG = 'Wrong search. Please, try again!'
+const RESULTS_ERROR_MSG = 'No results found, try again!'
 
 const Results = ({ data, input }) => {
   const [setShowModal, handleGetData, handleGetAllData] = useContext(ModalContext)
@@ -27,7 +27,7 @@ const Results = ({ data, input }) => {
   return data.length !== 0 ? (
     <styled.ResultsList>{resultsList}</styled.ResultsList>
   ) : (
-    !!input.lengthh && <h1>{RESULTS_ERROR_MSG}</h1>
+    !!input.length && <h1>{RESULTS_ERROR_MSG}</h1>
   )
 }
 

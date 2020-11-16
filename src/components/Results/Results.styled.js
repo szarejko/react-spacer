@@ -31,7 +31,6 @@ export const ResultsImgWrapper = styled.figure`
   width: 80vw;
   height: 25rem;
   display: inline-block;
-  box-shadow: 0 0.8rem 0.6rem -0.8rem ${setColors.black};
 
   @media (min-width: ${setBreakpoints.tablet}) {
     width: 40vw;
@@ -43,6 +42,7 @@ export const ResultsImgWrapper = styled.figure`
   }
 
   img {
+    box-shadow: 0 0.8rem 0.6rem -0.8rem ${setColors.black};
     object-fit: cover;
     object-position: 50% 0;
     display: block;
