@@ -1,6 +1,7 @@
-import { HeroImg } from './HeroImage.styled'
+import * as styled from './HeroImage.styled'
+
 import React from 'react'
 
-const HeroImage = () => <HeroImg />
+const HeroImage = () => <styled.HeroImg />
 
 export default HeroImage

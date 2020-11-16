@@ -1,4 +1,4 @@
-import { Link, Nav, NavList } from './Navigation.styled'
+import * as styled from './Navigation.styled'
 
 import Logo from '../Logo/Logo'
 import React from 'react'
@@ -12,17 +12,17 @@ const menuLinks = [
 const Navigation = () => {
   const menu = menuLinks.map(({ name, path, exact }) => (
     <li key={name}>
-      <Link activeClassName='isActive' to={path} exact={exact ? exact : false}>
+      <styled.Link activeClassName='isActive' to={path} exact={exact ? exact : false}>
         {name}
-      </Link>
+      </styled.Link>
     </li>
   ))
 
   return (
-    <Nav>
+    <styled.Nav>
       <Logo />
-      <NavList>{menu}</NavList>
-    </Nav>
+      <styled.NavList>{menu}</styled.NavList>
+    </styled.Nav>
   )
 }
 

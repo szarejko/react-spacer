@@ -1,11 +1,12 @@
-import { DateInputWrapper } from './DateInput.styled'
+import * as styled from './DateInput.styled'
+
 import React from 'react'
 
 const DateInput = ({ date, change, startDate }) => {
   const minDate = date.slice(0, 4) - 1 + '-01-31'
 
   return (
-    <DateInputWrapper>
+    <styled.DateInputWrapper>
       <label htmlFor='dateID'>Astronomy Picture of the Day:</label>
       <input
         id='dateID'
@@ -16,7 +17,7 @@ const DateInput = ({ date, change, startDate }) => {
         min={minDate}
         max={startDate}
       />
-    </DateInputWrapper>
+    </styled.DateInputWrapper>
   )
 }
 

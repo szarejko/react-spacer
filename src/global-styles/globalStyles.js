@@ -25,6 +25,6 @@ body {
   overflow: ${({ isModalOpen }) => (isModalOpen ? 'auto' : null)};
   overflow-x: ${({ isModalOpen }) => (isModalOpen ? 'hidden' : null)};
   font-family: ${setFontFamily.fontPrimary};
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 `

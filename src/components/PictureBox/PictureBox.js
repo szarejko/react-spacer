@@ -1,11 +1,6 @@
+import * as styled from './PictureBox.styled'
+
 import { DateInput, IconButton } from 'components/index'
-import {
-  Loader,
-  PictureImgWrapper,
-  PictureText,
-  PictureWrapper,
-  PictureWrapperBottom,
-} from './PictureBox.styled'
 import React, { useEffect, useState } from 'react'
 
 import ReactPlayer from 'react-player/youtube'
@@ -44,7 +39,7 @@ const PictureBox = () => {
   const resUrl = res.response.url
   const resImgDate = res.response.date
 
-  const loader = res.isLoading && <Loader>Loading...</Loader>
+  const loader = res.isLoading && <styled.Loader>Loading...</styled.Loader>
 
   const dataSource = /\.(gif|jpg|jpeg|png)$/i.test(resUrl) ? (
     <img src={resUrl} alt={resTitle} />
@@ -57,22 +52,21 @@ const PictureBox = () => {
   return (
     <>
       <DateInput date={date} startDate={CURRENT_DATE} change={handleInputValue} />
-      <PictureWrapper>
+      <styled.PictureWrapper>
         {loader}
-        <PictureImgWrapper>
-          <PictureText>APOTD from: {resImgDate}</PictureText>
+        <styled.PictureImgWrapper>
+          <styled.PictureText>APOTD from: {resImgDate}</styled.PictureText>
           {dataSource}
-        </PictureImgWrapper>
-      </PictureWrapper>
-
-      <PictureWrapperBottom>
+        </styled.PictureImgWrapper>
+      </styled.PictureWrapper>
+      <styled.PictureWrapperBottom>
         <IconButton icon={favoriteIco} onClick={() => setFavorite(resImgDate)}>
           add to favorite
         </IconButton>
         <IconButton icon={favoriteFolderIco} onClick={() => showFavorite()}>
           show favorite
         </IconButton>
-      </PictureWrapperBottom>
+      </styled.PictureWrapperBottom>
     </>
   )
 }

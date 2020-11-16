@@ -4,9 +4,9 @@ import React, { useState } from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import { GlobalStyles } from './global-styles/globalStyles'
-import Home from 'Home'
 import { Modal } from 'components/index'
 import ModalContext from 'context/ModalContext'
+import TemplateDefault from 'template/TemplateDefault'
 
 const App = () => {
   const [showModal, setShowModal] = useState(false)
@@ -29,14 +29,14 @@ const App = () => {
     <Router>
       <GlobalStyles isModalOpen={showModal} />
       <ModalContext.Provider value={[setShowModal, handleGetModalData, handleGetAllFetchData]}>
-        <Home>
+        <TemplateDefault>
           <Switch>
             <Route path='/' exact component={view.SearchView} />
             <Route path='/apotd' exact component={view.AstroPictureView} />
             <Route path='/about' component={view.AboutView} />
             <Route component={view.ErrorView} />
           </Switch>
-        </Home>
+        </TemplateDefault>
         {modal}
       </ModalContext.Provider>
     </Router>

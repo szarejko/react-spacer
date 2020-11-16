@@ -12,7 +12,7 @@ export const ModalContWrapper = styled.div`
   }
 `
 
-export const ModalImgCont = styled.figure`
+export const ModalContImg = styled.figure`
   width: 100%;
   margin-bottom: 2rem;
 
@@ -28,7 +28,7 @@ export const ModalImgCont = styled.figure`
   }
 `
 
-export const ModalDescription = styled.div`
+export const ModalContDescription = styled.div`
   width: 100%;
 
   @media (min-width: ${setBreakpoints.tablet}) {
@@ -42,6 +42,6 @@ export const ModalDescription = styled.div`
   }
 `
 
-export const Title = styled.h2`
+export const ModalContTitle = styled.h2`
   margin-bottom: 2rem;
 `

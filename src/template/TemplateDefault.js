@@ -1,7 +1,7 @@
 import { Navigation } from 'components/index'
 import React from 'react'
 
-const Home = ({ children }) => {
+const TemplateDefault = ({ children }) => {
   return (
     <>
       <Navigation />
@@ -10,4 +10,4 @@ const Home = ({ children }) => {
   )
 }
 
-export default Home
+export default TemplateDefault

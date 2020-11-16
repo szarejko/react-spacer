@@ -1,4 +1,5 @@
-import { LogoWrapper } from './Logo.styled'
+import * as styled from './Logo.styled'
+
 import React from 'react'
 import iconLogo from 'assets/icons/icon-logo.svg'
 
@@ -8,9 +9,9 @@ const Logo = () => {
   }
 
   return (
-    <LogoWrapper onClick={reloadPage}>
+    <styled.LogoWrapper onClick={reloadPage}>
       <img src={`${iconLogo}`} alt='Logo' />
-    </LogoWrapper>
+    </styled.LogoWrapper>
   )
 }
 

@@ -1,12 +1,13 @@
-import { ModalBtnWrapper, ModalOverlay, ModalWrapper } from './Modal.styled'
+import * as styled from './Modal.styled'
+
 import React, { useEffect, useState } from 'react'
 
 import { CloseButton } from 'components/global/CloseButton/CloseButton'
 import { ModalContent } from 'components/index'
 import { createPortal } from 'react-dom'
 
-let index = 0
-let length
+let index = 0,
+  length
 
 const Modal = ({ setModalState, data, allData }) => {
   const [modalData, setModalData] = useState(data)
@@ -32,19 +33,19 @@ const Modal = ({ setModalState, data, allData }) => {
   }
 
   return createPortal(
-    <ModalOverlay>
-      <ModalWrapper>
+    <styled.ModalOverlay>
+      <styled.ModalWrapper>
         <CloseButton onClick={handleToggleModal}>&Chi;</CloseButton>
         <ModalContent data={modalData} />
-        <ModalBtnWrapper>
+        <styled.ModalBtnWrapper>
           <span>
             {index + 1} / {length + 1}
           </span>
           <button onClick={showPrevPage}>&lt; Previous</button>
           <button onClick={showNextPage}>Next &gt;</button>
-        </ModalBtnWrapper>
-      </ModalWrapper>
-    </ModalOverlay>,
+        </styled.ModalBtnWrapper>
+      </styled.ModalWrapper>
+    </styled.ModalOverlay>,
     document.getElementById('modal-root'),
   )
 }

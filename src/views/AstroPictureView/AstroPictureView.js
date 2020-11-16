@@ -1,12 +1,13 @@
+import * as styled from './AstroPictureView.styled'
+
 import { PictureBox } from 'components/index'
-import { PictureBoxWrapper } from './AstroPictureView.styled'
 import React from 'react'
 
 const AstroPictureView = () => {
   return (
-    <PictureBoxWrapper>
+    <styled.PictureBoxWrapper>
       <PictureBox />
-    </PictureBoxWrapper>
+    </styled.PictureBoxWrapper>
   )
 }
 

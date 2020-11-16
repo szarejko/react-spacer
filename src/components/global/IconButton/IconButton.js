@@ -1,12 +1,13 @@
-import { IcoButton } from './IconButton.styled'
+import * as styled from './IconButton.styled'
+
 import React from 'react'
 
 const IconButton = ({ children, icon, ...props }) => {
   return (
-    <IcoButton {...props}>
+    <styled.IcoButton {...props}>
       <img src={icon} alt='' />
       {children}
-    </IcoButton>
+    </styled.IcoButton>
   )
 }
 

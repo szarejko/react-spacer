@@ -6,8 +6,8 @@ const ErrorView = () => (
   <Wrapper>
     <InnerWrapper>
       <h1>
-        Page Not Found.
-        <br /> Error 404
+        Page Not Found.<br />
+        Error 404
       </h1>
     </InnerWrapper>
   </Wrapper>
