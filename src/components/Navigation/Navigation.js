@@ -5,7 +5,7 @@ import React from 'react'
 
 const menuLinks = [
   { name: 'Home', path: '/', exact: true },
-  { name: 'Photo of the day', path: '/apotd' },
+  { name: 'Picture of the day', path: '/apotd' },
   { name: 'About', path: '/about' },
 ]
 

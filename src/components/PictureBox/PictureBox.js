@@ -1,3 +1,4 @@
+import { DateInput, IconButton } from 'components/index'
 import {
   Loader,
   PictureImgWrapper,
@@ -7,32 +8,30 @@ import {
 } from './PictureBox.styled'
 import React, { useEffect, useState } from 'react'
 
-import { DateInput } from 'components/index'
-import IconButton from '../global/IconButton/IconButton'
 import ReactPlayer from 'react-player/youtube'
 import favoriteFolderIco from 'assets/icons/icon-favorite-folder.png'
 import favoriteIco from 'assets/icons/icon-favorite.png'
 import { useFetch } from 'hooks/useFetch/useFetch'
 
+const CURRENT_DATE = new Date().toISOString().split('T')[0]
+const GET_LOCAL_STORAGE = localStorage.getItem('favoritePhoto')
 const API_URL_APOD =
   'https://api.nasa.gov/planetary/apod?api_key=obhXZx8NW2EhzDLTC5ARefUMQA8lNtYRaHNdW8hn&'
 
-const API_START_DATE = new Date().toISOString().split('T')[0]
-
-const GET_STORAGE_PIC = localStorage.getItem('favoritePhoto')
-
 const PictureBox = () => {
-  const [date, setDate] = useState(API_START_DATE)
+  const [date, setDate] = useState(CURRENT_DATE)
   const [favorite, setFavorite] = useState('')
 
   useEffect(() => {
     localStorage.setItem('favoritePhoto', favorite)
   }, [favorite])
 
-  const handleInputValue = (e) => setDate(e.target.value)
-
   const showFavorite = () => {
-    setDate(GET_STORAGE_PIC)
+    setDate(GET_LOCAL_STORAGE)
+  }
+
+  const handleInputValue = (e) => {
+    setDate(e.target.value)
   }
 
   const res = useFetch(`${API_URL_APOD}date=${date}`, {})
@@ -57,7 +56,7 @@ const PictureBox = () => {
 
   return (
     <>
-      <DateInput date={date} startDate={API_START_DATE} change={handleInputValue} />
+      <DateInput date={date} startDate={CURRENT_DATE} change={handleInputValue} />
       <PictureWrapper>
         {loader}
         <PictureImgWrapper>
@@ -65,6 +64,7 @@ const PictureBox = () => {
           {dataSource}
         </PictureImgWrapper>
       </PictureWrapper>
+
       <PictureWrapperBottom>
         <IconButton icon={favoriteIco} onClick={() => setFavorite(resImgDate)}>
           add to favorite
