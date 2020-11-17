@@ -9,13 +9,14 @@ import favoriteIco from 'assets/icons/icon-favorite.png'
 import { useFetch } from 'hooks/useFetch/useFetch'
 
 const CURRENT_DATE = new Date().toISOString().split('T')[0]
-const GET_LOCAL_STORAGE = localStorage.getItem('favoritePhoto')
 const API_URL_APOD =
   'https://api.nasa.gov/planetary/apod?api_key=obhXZx8NW2EhzDLTC5ARefUMQA8lNtYRaHNdW8hn&'
 
 const PictureBox = () => {
   const [date, setDate] = useState(CURRENT_DATE)
   const [favorite, setFavorite] = useState('')
+
+  const GET_LOCAL_STORAGE = localStorage.getItem('favoritePhoto')
 
   useEffect(() => {
     localStorage.setItem('favoritePhoto', favorite)
