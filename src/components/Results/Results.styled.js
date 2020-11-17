@@ -1,4 +1,4 @@
-import { setBreakpoints, setColors, setShadow } from 'global-styles/styles'
+import { setBreakpoints, setShadow } from 'global-styles/styles'
 
 import { opacityIn } from 'global-styles/animations'
 import styled from 'styled-components'

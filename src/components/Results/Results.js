@@ -2,7 +2,7 @@ import * as styled from './Results.styled'
 
 import React, { useContext, useMemo, useState } from 'react'
 
-import { LoadMoreButton } from 'components/global/LoadMoreButton/LoadMoreButton'
+import LoadMoreButton from 'components/global/LoadMoreButton/LoadMoreButton'
 import ModalContext from 'context/ModalContext'
 
 const RESULTS_ERROR_MSG = 'No results found, try again!'

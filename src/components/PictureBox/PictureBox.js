@@ -59,14 +59,14 @@ const PictureBox = () => {
           {dataSource}
         </styled.PictureImgWrapper>
       </styled.PictureWrapper>
-      <styled.PictureWrapperBottom>
+      <styled.PictureWrapperButtons>
         <IconButton icon={favoriteIco} onClick={() => setFavorite(resImgDate)}>
           add to favorite
         </IconButton>
         <IconButton icon={favoriteFolderIco} onClick={() => showFavorite()}>
           show favorite
         </IconButton>
-      </styled.PictureWrapperBottom>
+      </styled.PictureWrapperButtons>
     </>
   )
 }

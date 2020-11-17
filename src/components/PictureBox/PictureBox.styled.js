@@ -43,7 +43,7 @@ export const PictureText = styled.h3`
   padding: 1rem 0;
 `
 
-export const PictureWrapperBottom = styled.div`
+export const PictureWrapperButtons = styled.div`
   ${WRAP_STYLES}
 `
 
