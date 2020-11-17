@@ -25,7 +25,7 @@ export const ResultsListItem = styled.li`
   ${opacityIn()};
 
   &:hover {
-    filter: sepia(80%);
+    filter: sepia(90%);
   }
 `
 
@@ -50,5 +50,6 @@ export const ResultsImgWrapper = styled.figure`
     display: block;
     width: 100%;
     height: 100%;
+    border-radius: 5px;
   }
 `
