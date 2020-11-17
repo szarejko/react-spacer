@@ -2,6 +2,7 @@ import * as styled from './Results.styled'
 
 import React, { useContext, useMemo, useState } from 'react'
 
+import { LoadMoreButton } from 'components/global/LoadMoreButton/LoadMoreButton'
 import ModalContext from 'context/ModalContext'
 
 const RESULTS_ERROR_MSG = 'No results found, try again!'
@@ -36,11 +37,7 @@ const Results = ({ data, input }) => {
   return data.length !== 0 ? (
     <>
       <styled.ResultsList>{resultsList}</styled.ResultsList>
-      {visible < data.length && (
-        <button onClick={loadMore} type='button'>
-          Load more
-        </button>
-      )}
+      {visible < data.length && <LoadMoreButton onClick={loadMore}>Load more</LoadMoreButton>}
     </>
   ) : (
     !!input.length && <h1>{RESULTS_ERROR_MSG}</h1>

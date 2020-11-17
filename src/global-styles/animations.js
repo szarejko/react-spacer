@@ -19,3 +19,17 @@ export const fadeIn = (start, middle, end) => {
     animation: ${amination} 2s ease-in-out;
   `
 }
+
+export const opacityIn = () => {
+  const amination = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+  `
+  return css`
+    animation: ${amination} .5s ease-in;
+  `
+}

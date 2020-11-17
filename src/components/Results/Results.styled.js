@@ -1,5 +1,6 @@
-import { setBreakpoints, setColors } from 'global-styles/styles'
+import { setBreakpoints, setColors, setShadow } from 'global-styles/styles'
 
+import { opacityIn } from 'global-styles/animations'
 import styled from 'styled-components'
 
 export const ResultsList = styled.ul`
@@ -21,6 +22,7 @@ export const ResultsListItem = styled.li`
   border-radius: 5px;
   transition: filter 0.3s ease-in-out;
   cursor: pointer;
+  ${opacityIn()};
 
   &:hover {
     filter: sepia(80%);
@@ -42,7 +44,7 @@ export const ResultsImgWrapper = styled.figure`
   }
 
   img {
-    box-shadow: 0 0.8rem 0.6rem -0.8rem ${setColors.black};
+    box-shadow: ${setShadow.second};
     object-fit: cover;
     object-position: 50% 0;
     display: block;
