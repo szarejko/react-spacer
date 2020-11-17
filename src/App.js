@@ -7,6 +7,7 @@ import { GlobalStyles } from './global-styles/globalStyles'
 import { Modal } from 'components/index'
 import ModalContext from 'context/ModalContext'
 import TemplateDefault from 'templates/TemplateDefault'
+import Wrapper from "hoc/Wrapper";
 
 const App = () => {
   const [showModal, setShowModal] = useState(false)
@@ -31,10 +32,10 @@ const App = () => {
       <ModalContext.Provider value={[setShowModal, handleGetModalData, handleGetAllFetchData]}>
         <TemplateDefault>
           <Switch>
-            <Route path='/' exact component={view.SearchView} />
-            <Route path='/apotd' exact component={view.AstroPictureView} />
-            <Route path='/about' component={view.AboutView} />
-            <Route component={view.ErrorView} />
+            <Route path='/' exact component={(view.SearchView)} />
+            <Route path='/apotd' exact component={Wrapper(view.AstroPictureView)} />
+            <Route path='/about' component={Wrapper(view.AboutView)} />
+            <Route component={Wrapper(view.ErrorView)} />
           </Switch>
         </TemplateDefault>
         {modal}
