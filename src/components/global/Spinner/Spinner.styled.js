@@ -1,3 +1,4 @@
+import { setColors } from "global-styles/styles";
 import styled from 'styled-components'
 
 export const SpinnerWrapper = styled.div`
@@ -5,6 +6,8 @@ export const SpinnerWrapper = styled.div`
   width: 100%;
   height: 100vh;
   z-index: 100;
+  background-color: ${setColors.blackTransparent};
+  transition: .5s;
 
   img {
     position: absolute;

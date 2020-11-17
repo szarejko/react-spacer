@@ -6,7 +6,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import { GlobalStyles } from './global-styles/globalStyles'
 import { Modal } from 'components/index'
 import ModalContext from 'context/ModalContext'
-import TemplateDefault from 'template/TemplateDefault'
+import TemplateDefault from 'templates/TemplateDefault'
 
 const App = () => {
   const [showModal, setShowModal] = useState(false)

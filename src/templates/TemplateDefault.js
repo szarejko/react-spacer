@@ -1,4 +1,4 @@
-import { Navigation } from 'components/index'
+import { Navigation } from 'components'
 import React from 'react'
 
 const TemplateDefault = ({ children }) => {
