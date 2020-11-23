@@ -1,32 +1,34 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 import SpinnerPage from 'components/global/SpinnerPage/SpinnerPage'
-import { withRouter } from "react-router";
+import { withRouter } from 'react-router'
 
-export default WrappedComponent => {
+export default (WithLoading) => {
   class Wrapper extends Component {
-    state = { isLoading: true };
+    state = {
+      isLoading: true
+    }
 
-    componentDidMount = () => this.setTimer();
+    componentDidMount = () => this.setTimer()
 
-    componentDidUpdate = prevProps => {
+    componentDidUpdate = (prevProps) => {
       if (this.props.location !== prevProps.location) {
-        this.clearTimer();
-        this.setState({ isLoading: true }, () => this.setTimer());
+        this.clearTimer()
+        this.setState({ isLoading: true }, () => this.setTimer())
       }
-    };
+    }
 
-    clearTimer = () => clearTimeout(this.timeout);
-    timer = () => this.setState({ isLoading: false }, () => this.clearTimer());
-    setTimer = () => (this.timeout = setTimeout(this.timer, 800));
+    clearTimer = () => clearTimeout(this.timeout)
+    timer = () => this.setState({ isLoading: false }, () => this.clearTimer())
+    setTimer = () => (this.timeout = setTimeout(this.timer, 800))
 
-    render = () => (
+    render = () =>
       <>
-        {this.state.isLoading
-          ? <SpinnerPage/>
-          : <WrappedComponent {...this.props} />}
+        {this.state.isLoading ?
+        <SpinnerPage />
+        :
+        <WithLoading {...this.props} />}
       </>
-    )
   }
-  return withRouter(Wrapper);
+  return withRouter(Wrapper)
 }
