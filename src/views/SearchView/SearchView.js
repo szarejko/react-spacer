@@ -12,6 +12,8 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [step, setStep] = useState(0)
   const [isValid, setIsValid] = useState(false)
+  const [searchHits, setSearchHits] = useState(0)
+  const [currentPage, setCurrentPage] = useState(1)
 
   const handleInputValue = (e) => {
     setInputValue(e.target.value)
@@ -27,11 +29,12 @@ const Search = () => {
       if (e.key === 'Enter' || e.type === 'mousedown') {
         setIsLoading(true)
 
-        fetch(`${API_URL}?q=${inputValue}&media_type=image`)
+        fetch(`${API_URL}?q=${inputValue}&media_type=image&page=${currentPage}`)
           .then((response) => response.json())
           .then((response) => {
             setFetchData(response.collection.items)
             setIsLoading(false)
+            setSearchHits(response.collection.metadata.total_hits)
             setStep(1)
           })
           .catch((err) => {
@@ -43,7 +46,7 @@ const Search = () => {
   }
 
   const hero =
-    step === 0 ? (
+    !step ? (
       <>
         <HeroImg />
         <HeroClaim />
@@ -53,7 +56,7 @@ const Search = () => {
   const result = fetchData && !isLoading && step === 1 ? <Results data={fetchData} input={inputValue} /> : null
 
   return (
-    <SearchWrapper flexStart={step === 1}>
+    <SearchWrapper flexStart={step}>
       {hero}
       <MainInput
         handleSearch={handleSearchInput}
